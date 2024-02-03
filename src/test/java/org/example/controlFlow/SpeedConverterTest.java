@@ -1,6 +1,5 @@
-package org.example.controlFlowTest;
+package org.example.controlFlow;
 
-import org.example.controlFlow.SpeedConverter;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
