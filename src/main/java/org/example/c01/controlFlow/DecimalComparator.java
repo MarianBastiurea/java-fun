@@ -1,4 +1,4 @@
-package org.example.controlFlow;
+package org.example.c01.controlFlow;
 
 /*
 DecimalComparator

@@ -1,4 +1,4 @@
-package org.example.controlFlow;
+package org.example.c01.controlFlow;
 
 public class PositiveNegativeZero {
     public static String checkNumber(int number) {

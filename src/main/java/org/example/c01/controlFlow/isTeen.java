@@ -1,4 +1,4 @@
-package org.example.controlFlow;
+package org.example.c01.controlFlow;
 
 /*
 Write a method named isTeen with 1 parameter of type int.
