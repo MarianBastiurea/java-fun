@@ -20,6 +20,7 @@ public class MegaBytesConverterTest {
         String result = MegaBytesConverter.printMegaBytesAndKiloBytes(kiloBytes);
         assertEquals(myResult, result);
     }
+
     @Test
     public void given0KBShouldReturn0MbAnd0KB() {
         int kiloBytes = 2500;
