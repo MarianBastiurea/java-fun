@@ -1,0 +1,38 @@
+/*
+JDK means Java Development Kit
+JVM means Java Virtual Machine
+Statement is complete command to be executed
+Keyword is any one of a number of reserved word, that have a predefined meaning in Java
+Keywords need to be in lowercase
+Variables are a way to store information in computer
+Declaration Statement is used to define a variable by indicating the data type, name and eventually set a value
+Expression is a coding construct, that evaluates a single value
+Expression is a code segment in Right side of equals sign in assign or declaration statement
+Class is a building blocks for object-oriented programming
+Overflow and Underflow is a value larger or lower than maximum or minimum value of an int, double,etc.
+A numeric literal that exceeds maximum value of int should have "L" as suffix.
+Cannot declare variables with different data type in a single statement
+If you declare multiple variables with same data type, you have to declare data types only once before any variables name
+The Java compiler does not attempt to evaluate the value in a variable when it's used in a calculation, so it's
+doesn't know if the value fits, and throws an error
+Casting means to convert a number from one type to another
+We use a floating point number when we need high precision in calculations
+Double is more fast to be compiled than a float number
+Char contains only one character
+String is a class that contain a sequence of characters
++ is addition for numbers and concatenation for String
+Immutable means you cannot change a String after is created
+i++ means incrementing by 1
+x-=y same with x=x-y
+x*=y same x=x*y
+The if-then statement is the most basic of all control flow statements. It tells your program to execute a certain
+section of a code, only if a particular test evaluates to true. this is known as a Conditional Logic"
+!= means not equal
+&& evaluate if the both test are true
+|| evaluate if one of both test are true
+! logical Not operator known as Logical Complement operator
+Operand1 ? Operand2 : Operand3, evaluate Operand1 if it's true will execute Operand 2and
+if it's false will execute Operand3
+
+
+
