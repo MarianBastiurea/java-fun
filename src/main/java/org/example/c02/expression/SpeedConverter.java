@@ -1,4 +1,4 @@
-package org.example.c01.controlFlow;
+package org.example.c02.expression;
 
 /*
  Write a method called toMilesPerHour that has 1 parameter of type double with the name kilometersPerHour.

@@ -1,4 +1,4 @@
-package org.example.c01.controlFlow;
+package org.example.c02.expression;
 
 public class convertInchesToCentimeters {
     public static double inchesToCm(int heightInInches){

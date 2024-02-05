@@ -1,4 +1,4 @@
-package org.example.c01.controlFlow;
+package org.example.c02.expression;
 
 public class convertFeetAndInchesToCm {
     public static double feetAndInchesToCm(int feet, int inches) {

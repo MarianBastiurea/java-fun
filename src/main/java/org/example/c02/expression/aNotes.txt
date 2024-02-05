@@ -1,0 +1,8 @@
+/*
+Expression- computes to a single value
+Statements- Stand alone units of work
+Whitespace- spaces around code ignored by Java and it's purpose for human readability
+Reformat code- change code format to be more easy to read
+
+*/
+
