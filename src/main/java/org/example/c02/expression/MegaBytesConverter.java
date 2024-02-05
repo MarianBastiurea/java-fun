@@ -1,4 +1,4 @@
-package org.example.c01.controlFlow;
+package org.example.c02.expression;
 
 /*
 Write a method called printMegaBytesAndKiloBytes that has 1 parameter of type int with the name kiloBytes.
