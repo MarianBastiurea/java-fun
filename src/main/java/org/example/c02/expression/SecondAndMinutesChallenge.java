@@ -21,7 +21,7 @@ public class SecondAndMinutesChallenge {
         int hours, remainingMinutes, remainingSeconds;
         if (minutes < 0) {
             result="Invalid value";
-        } else if( seconds<0&&seconds>59){
+        } else if( seconds<0||seconds>59){
             result="Invalid value";}
         else { hours=minutes/60;
             remainingMinutes=minutes-hours*60;
