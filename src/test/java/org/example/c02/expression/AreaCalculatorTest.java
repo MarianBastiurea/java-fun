@@ -25,4 +25,12 @@ public class AreaCalculatorTest {
         double result=AreaCalculator.area(x,y);
         assertEquals(area,result);
     }
+    @Test
+    public void given2ForXAnd6ForYShouldReturn12(){
+        double x=2;
+        double y=6;
+        double area=12;
+        double result=AreaCalculator.area(x,y);
+        assertEquals(area,result);
+    }
 }
