@@ -1,4 +1,4 @@
-package org.example;
+package org.example.c02.expression;
 
 import org.example.c02.expression.MinutesToYearsDaysCalculator;
 import org.junit.jupiter.api.Test;
