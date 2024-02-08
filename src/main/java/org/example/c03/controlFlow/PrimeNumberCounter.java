@@ -5,9 +5,11 @@ public class PrimeNumberCounter {
         int countNumber = 0;
         int[] temporaryPrimeNumberArray = new int[upper - lower];
         for (int i = lower; i <= upper; i++) {
-            if (isPrime(i) == true) {
+            if (isPrime(i)) {
                 temporaryPrimeNumberArray[countNumber] = i;
                 countNumber++;
+                if (countNumber==3)
+                    break;
             }
         }
         int[] primeNumber = new int[countNumber];
