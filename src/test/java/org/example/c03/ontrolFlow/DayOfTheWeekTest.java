@@ -15,7 +15,7 @@ public class DayOfTheWeekTest {
     }
 
     @Test
-    public void given7ShouldReturnSunday() {
+    public void given7ShouldInvalidDay() {
         int day = 7;
         String myDay = "Invalid day";
         String result = DayOfTheWeek.printDayOfTheWeek(day);

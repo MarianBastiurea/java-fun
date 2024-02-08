@@ -20,8 +20,7 @@ public class NumberOfDaysInMonth {
     public static int getDaysInMonth(int month, int year) {
         int result;
         if (month < 1 || month > 12 || year <= 1 || year >= 9999) {
-            result = -1;
-            return result;
+            return -1;
         }
         switch (month) {
             case 1, 3, 5, 7, 10, 8, 12:
@@ -49,7 +48,7 @@ public class NumberOfDaysInMonth {
             leapYear = false;
         } else if (year % 4 == 0 && year % 100 != 0) {
             leapYear = true;
-        } else leapYear = year % 100 == 0 && year % 400 == 0;
+        } else leapYear = year % 400 == 0;
         return leapYear;
     }
 }
