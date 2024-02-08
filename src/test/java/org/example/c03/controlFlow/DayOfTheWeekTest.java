@@ -1,6 +1,5 @@
-package org.example.c03.ontrolFlow;
+package org.example.c03.controlFlow;
 
-import org.example.c03.controlFlow.DayOfTheWeek;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

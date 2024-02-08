@@ -33,7 +33,10 @@ section of a code, only if a particular test evaluates to true. this is known as
 ! logical Not operator known as Logical Complement operator
 Operand1 ? Operand2 : Operand3, evaluate Operand1 if it's true will execute Operand 2and
 if it's false will execute Operand3
-
+a class could be described as :
+    custom sta type
+    a special block code that contains methods
+An object is called an instace of particular clasd
 */
 
 
