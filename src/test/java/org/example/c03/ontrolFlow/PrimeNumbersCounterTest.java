@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class PrimeNumbersCounterTest {
     @Test
-    public void given3AsLowerNumberAnd30AsUpperNumberShouldReturn3PrimeNumber() {
+    public void given3AsLowerNumberAnd30AsUpperNumberShouldReturn3PrimeNumbers() {
         int lower = 3;
         int upper = 30;
         int[] myResult = {3, 5, 7};
