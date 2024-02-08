@@ -1,7 +1,7 @@
 package org.example.c03.controlFlow;
 
-public class PrimeNumberCounter {
-    public static int[] countPrimeNumber(int lower, int upper) {
+public class PrimeNumbersCounter {
+    public static int[] countPrimeNumbers(int lower, int upper) {
         int countNumber = 0;
         int[] temporaryPrimeNumberArray = new int[upper - lower];
         for (int i = lower; i <= upper; i++) {
