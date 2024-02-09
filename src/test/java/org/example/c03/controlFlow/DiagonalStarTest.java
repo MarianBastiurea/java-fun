@@ -8,7 +8,7 @@ public class DiagonalStarTest {
     @Test
     public void generateRectangle() {
         int number = 5;
-        String rectangle = DiagonalStar.printSquareStar(number);
+        String rectangle = DiagonalStar.printRectangleStar(number);
         assertEquals("""
                 *****
                 ** **

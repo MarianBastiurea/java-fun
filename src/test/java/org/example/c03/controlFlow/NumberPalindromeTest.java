@@ -8,8 +8,7 @@ public class NumberPalindromeTest {
     @Test
     public void given12321ShouldReturnTrue() {
         int number = 12321;
-        boolean isPalindrome = true;
-        boolean result = NumberPalindrome.isPalindrome(number);
-        assertEquals(result, isPalindrome);
+        boolean isPalindrome = NumberPalindrome.isPalindrome(number);
+        assertTrue(isPalindrome);
     }
 }

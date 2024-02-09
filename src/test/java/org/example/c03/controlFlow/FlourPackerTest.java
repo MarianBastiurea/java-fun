@@ -10,9 +10,8 @@ public class FlourPackerTest {
         int bigWeight = 1;
         int smallWeight = 0;
         int goals = 4;
-        boolean isPossible = false;
         boolean result = FlourPacker.canPack(bigWeight, smallWeight, goals);
-        assertEquals(isPossible, result);
+        assertFalse(result);
     }
 
     @Test
@@ -20,9 +19,8 @@ public class FlourPackerTest {
         int bigWeight = 1;
         int smallWeight = 0;
         int goals = 5;
-        boolean isPossible = true;
         boolean result = FlourPacker.canPack(bigWeight, smallWeight, goals);
-        assertEquals(isPossible, result);
+        assertTrue(result);
     }
 
     @Test
@@ -30,9 +28,8 @@ public class FlourPackerTest {
         int bigWeight = 0;
         int smallWeight = 5;
         int goals = 4;
-        boolean isPossible = true;
         boolean result = FlourPacker.canPack(bigWeight, smallWeight, goals);
-        assertEquals(isPossible, result);
+        assertTrue(result);
     }
 
     @Test
@@ -40,9 +37,8 @@ public class FlourPackerTest {
         int bigWeight = -3;
         int smallWeight = 2;
         int goals = 12;
-        boolean isPossible = false;
         boolean result = FlourPacker.canPack(bigWeight, smallWeight, goals);
-        assertEquals(isPossible, result);
+        assertFalse(result);
     }
 
     @Test
@@ -50,8 +46,7 @@ public class FlourPackerTest {
         int bigWeight = 3;
         int smallWeight = -2;
         int goals = 12;
-        boolean isPossible = false;
         boolean result = FlourPacker.canPack(bigWeight, smallWeight, goals);
-        assertEquals(isPossible, result);
+        assertFalse(result);
     }
 }
