@@ -8,32 +8,32 @@ public class NumberToWordsTest {
     @Test
     public void given0ShouldReturnZero() {
         int number = 0;
-        String myWords = "Zero";
+        String zero = "Zero";
         String result = NumberToWords.numberToWords(number);
-        assertEquals(myWords, result);
+        assertEquals(zero, result);
     }
 
     @Test
     public void givenNegative1ShouldReturnInvalidValue() {
         int number = -1;
-        String myWords = "Invalid Value";
+        String invalidValue = "Invalid Value";
         String result = NumberToWords.numberToWords(number);
-        assertEquals(myWords, result);
+        assertEquals(invalidValue, result);
     }
 
     @Test
     public void given11ShouldReturnOneOne() {
         int number = 11;
-        String myWords = "One One ";
+        String eleven = "One One ";
         String result = NumberToWords.numberToWords(number);
-        assertEquals(myWords, result);
+        assertEquals(eleven, result);
     }
 
     @Test
     public void given900ShouldReturnNineOneOne() {
         int number = 900;
-        String myWords = "Nine Zero Zero ";
+        String nineHundred = "Nine Zero Zero ";
         String result = NumberToWords.numberToWords(number);
-        assertEquals(myWords, result);
+        assertEquals(nineHundred, result);
     }
 }

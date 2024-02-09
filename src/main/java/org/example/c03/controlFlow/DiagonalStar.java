@@ -28,7 +28,7 @@ When the row number equals the column number
 When the column number equals rowCount - currentRow + 1 (where currentRow is current row number)
  */
 public class DiagonalStar {
-    public static String printSquareStar(int number) {
+    public static String printRectangleStar(int number) {
         String result = "";
         if (number < 5) {
             return "Invalid Value";
