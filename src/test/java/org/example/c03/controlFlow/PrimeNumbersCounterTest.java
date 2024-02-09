@@ -1,8 +1,7 @@
-package org.example.c03.ontrolFlow;
+package org.example.c03.controlFlow;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.example.c03.controlFlow.PrimeNumbersCounter;
 import org.junit.jupiter.api.Test;
 
 public class PrimeNumbersCounterTest {
