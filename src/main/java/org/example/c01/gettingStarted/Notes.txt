@@ -1,4 +1,6 @@
 /*
+General Information
+
 JDK means Java Development Kit
 JVM means Java Virtual Machine
 Statement is complete command to be executed
@@ -25,6 +27,9 @@ Immutable means you cannot change a String after is created
 i++ means incrementing by 1
 x-=y same with x=x-y
 x*=y same x=x*y
+
+Control Flow
+
 The if-then statement is the most basic of all control flow statements. It tells your program to execute a certain
 section of a code, only if a particular test evaluates to true. this is known as a Conditional Logic"
 != means not equal
@@ -33,9 +38,12 @@ section of a code, only if a particular test evaluates to true. this is known as
 ! logical Not operator known as Logical Complement operator
 Operand1 ? Operand2 : Operand3, evaluate Operand1 if it's true will execute Operand 2and
 if it's false will execute Operand3
+
+Inheritance
+
 a class could be described as :
     a special block code that contains methods
-An object is called an instance of particular clas
+An object is called an instance of particular class
 Class can be organized into logical groups, which are called packages
 A "public class" means any other class in any package could access this class. "public" is modifier
 A "class" means that class it's accessible only to classes from same package
