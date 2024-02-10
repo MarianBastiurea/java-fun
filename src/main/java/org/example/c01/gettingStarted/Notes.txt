@@ -35,7 +35,21 @@ Operand1 ? Operand2 : Operand3, evaluate Operand1 if it's true will execute Oper
 if it's false will execute Operand3
 a class could be described as :
     a special block code that contains methods
-An object is called an instace of particular clas
+An object is called an instance of particular clas
+Class can be organized into logical groups, which are called packages
+A "public class" means any other class in any package could access this class. "public" is modifier
+A "class" means that class it's accessible only to classes from same package
+A "private class" means no other class could access this class
+A "protected class" allows classes in same package and any subclasses in other package, to have access to member
+Encapsulation means:-bundling of behaviour and attributes on a single object
+                    - hiding fields,and some methods, from public access
+null is a special keyword in Java, meaning that the variable or attribute has a type but no reference to an object
+getter is a method on a class, that retrieves the values of a private field, and returns it
+setter is a method in a class, that sets the value of a private field
+"this" really refers to is instance that was created when objects was instantiated
+Constructor is used in the creation on a object, that's an instance of a class
+it's a special type of code block that has a specific name and parameters, much like a method.
+Have the same name as class but no return any values.Never include a return type from constructor, not even "void".
 */
 
 
