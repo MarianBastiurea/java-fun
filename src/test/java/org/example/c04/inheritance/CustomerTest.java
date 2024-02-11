@@ -1,6 +1,5 @@
 package org.example.c04.inheritance;
 
-import java.util.concurrent.Callable;
 
 public class CustomerTest {
     public static void main(String[] args) {
