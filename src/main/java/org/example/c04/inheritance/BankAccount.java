@@ -83,9 +83,4 @@ public class BankAccount {
     public void setCustomerPhoneNumber(String customerPhoneNumber) {
         this.customerPhoneNumber = customerPhoneNumber;
     }
-
-    double account() {
-
-        return accountBalance;
-    }
 }
