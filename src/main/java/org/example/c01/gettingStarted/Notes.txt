@@ -59,8 +59,36 @@ Constructor is used in the creation on a object, that's an instance of a class
 it's a special type of code block that has a specific name and parameters, much like a method.
 Have the same name as class but no return any values.Never include a return type from constructor, not even "void".
 
-*/Constructor chaining is when a constructor explicitly call another overloaded constructor
+Constructor chaining is when a constructor explicitly call another overloaded constructor
 You can call a constructor only from another constructor
+
+Static variable aka "static member variables"  declared by using word "static". Could be used soring counters,
+ generate unique ID, storing a constant value that doesn't change like Pi
+
+ Instance variable, aka fields, don't use "static" and belong to a specific instance of a class
+
+ Static methods are declared using "static" and can't access instance methods and instant variables directly
+ and are used for operations which don't require any data from instance of a class.
+ Static method are called ClassName.methodName() or methodName() only if in the same class
+
+ Instance methods belong to an instance, class
+ To use it have to use "new"
+
+ Plain old java Object (POJO) is a class that have only instance fields. it's used to house data , and pass data,
+ between functional classes
+ Annotation is a type of metadata and is a way formally describing additional information about our code
+ An overridden method is a special method in java, that other class can implement,if they use a specified method signature
+
+
+
+
+
+
+
+
+
+
+*/
 
 
 
