@@ -13,6 +13,14 @@ public class SharedDigitTest {
         boolean result = SharedDigit.hasSharedDigit(firstNumber, secondNumber);
         assertEquals(isFound, result);
     }
+    @Test
+    public void given12And33ShouldReturnFalse() {
+        int firstNumber = 12;
+        int secondNumber = 33;
+        boolean isFound = false;
+        boolean result = SharedDigit.hasSharedDigit(firstNumber, secondNumber);
+        assertEquals(isFound, result);
+    }
 
     @Test
     public void given9And9ShouldReturnFalse() {

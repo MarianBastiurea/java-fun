@@ -13,7 +13,7 @@ public class SecondAndMinutesChallengeTest {
         assertEquals(myResult, result);
     }
     @Test
-    public void givenNegative3600SecondsShouldReturn1Hour3MinAnd20sec() {
+    public void givenNegative3600SecondsShouldReturnInvalidValue() {
         int second = -3600;
         String myResult = "Invalid value";
         String result = SecondAndMinutesChallenge.getDurationString(second);

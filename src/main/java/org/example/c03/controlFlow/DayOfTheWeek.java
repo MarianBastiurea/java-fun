@@ -32,7 +32,7 @@ public class DayOfTheWeek {
             result = "Friday";
         } else if (day == 6) {
             result = "Saturday";
-        } else result = "invalid Day";
+        } else result = "Invalid Day";
         return result;
     }
 }
