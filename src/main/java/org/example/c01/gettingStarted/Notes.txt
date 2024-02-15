@@ -79,6 +79,16 @@ Static variable aka "static member variables"  declared by using word "static". 
  Annotation is a type of metadata and is a way formally describing additional information about our code
  An overridden method is a special method in java, that other class can implement,if they use a specified method signature
 
+"extend" specify the superclass of the class we are declaring.
+a class could specify only one class in "extend"
+super() is a lot like this(), calls a constructor on the superclass, directly from the subclass constructor.
+Like this() have to be first statement of the constructor.
+Because of that super() and this() couldn't be called from same constructor
+overridden method of a subclass can do one of the three thing:
+-it can implement completely different behaviour, overridding behaviour of parent
+-simply can call the parent class's parent method, which is implicit
+-or the method can call the parent's class method, and can include other code to run, so can extend behaviour of
+ parent class
 
 
 
