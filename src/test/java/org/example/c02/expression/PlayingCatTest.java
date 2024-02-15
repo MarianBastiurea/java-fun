@@ -24,7 +24,7 @@ public class PlayingCatTest {
     }
 
     @Test
-    public void givenFalseAnd35DegreesShouldReturnFalse() {
+    public void givenFalseAnd35DegreesShouldReturnTrue() {
         boolean summer = false;
         int temperature = 35;
         boolean myResult = true;
@@ -32,4 +32,28 @@ public class PlayingCatTest {
         assertEquals(myResult, result);
     }
 
+    @Test
+    public void givenTrueAnd36DegreesShouldReturnTrue() {
+        boolean summer = true;
+        int temperature = 36;
+        boolean myResult = true;
+        boolean result = PlayingCat.isCatPlaying(summer, temperature);
+        assertEquals(myResult, result);
+    }
+    @Test
+    public void givenFalseAnd27DegreesShouldReturnTrue() {
+        boolean summer = false;
+        int temperature = 27;
+        boolean myResult = true;
+        boolean result = PlayingCat.isCatPlaying(summer, temperature);
+        assertEquals(myResult, result);
+    }
+    @Test
+    public void givenTrueAnd27DegreesShouldReturnTrue() {
+        boolean summer = true;
+        int temperature = 27;
+        boolean myResult = true;
+        boolean result = PlayingCat.isCatPlaying(summer, temperature);
+        assertEquals(myResult, result);
+    }
 }

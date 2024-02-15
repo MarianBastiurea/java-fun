@@ -13,10 +13,8 @@ otherwise return false.
 public class PlayingCat {
     public static boolean isCatPlaying(boolean summer, int temperature) {
         boolean result = false;
-        if (summer == true) {
-            if (temperature >= 25 && temperature <= 45) {
-                result = true;
-            } else result = false;
+        if (summer) {
+            result = temperature >= 25 && temperature <= 45;
         } else if (temperature >= 25 && temperature <= 35) {
             result = true;
         }
