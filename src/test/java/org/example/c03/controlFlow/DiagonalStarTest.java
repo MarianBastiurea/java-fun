@@ -17,4 +17,11 @@ public class DiagonalStarTest {
                 *****
                 """, rectangle);
     }
+
+    @Test
+    public void generateNoRectangle() {
+        int number = 1;
+        String rectangle = DiagonalStar.printRectangleStar(number);
+        assertEquals("Invalid Value", rectangle);
+    }
 }

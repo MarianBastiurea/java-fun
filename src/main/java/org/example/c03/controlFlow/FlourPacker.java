@@ -22,10 +22,6 @@ public class FlourPacker {
         int totalWeight = bigCount * bigWeight + smallCount * smallWeight;
         if (totalWeight < goal) {
             return false;
-        } else if (goal % bigWeight > smallCount) {
-            return false;
-        } else {
-            return true;
-        }
+        } else return goal % bigWeight <= smallCount;
     }
 }

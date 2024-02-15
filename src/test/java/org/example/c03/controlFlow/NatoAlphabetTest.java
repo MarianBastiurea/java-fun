@@ -12,7 +12,6 @@ public class NatoAlphabetTest {
         String result = NatoAlphabet.equivalentWord(letter);
         assertEquals(myWord, result);
     }
-
     @Test
     public void givenXShouldReturnNoLetterFound() {
         char letter = 'X';

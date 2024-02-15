@@ -13,6 +13,14 @@ public class FlourPackerTest {
         boolean result = FlourPacker.canPack(bigWeight, smallWeight, goals);
         assertFalse(result);
     }
+    @Test
+    public void given1AsBigWeightAnd0AsSmallWeightAnd7AsGoalShouldReturnFalse() {
+        int bigWeight = 1;
+        int smallWeight = 0;
+        int goals = 7;
+        boolean result = FlourPacker.canPack(bigWeight, smallWeight, goals);
+        assertFalse(result);
+    }
 
     @Test
     public void given1AsBigWeightAnd0AsSmallWeightAnd5AsGoalShouldReturnTrue() {
