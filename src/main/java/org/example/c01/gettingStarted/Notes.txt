@@ -85,10 +85,13 @@ super() is a lot like this(), calls a constructor on the superclass, directly fr
 Like this() have to be first statement of the constructor.
 Because of that super() and this() couldn't be called from same constructor
 overridden method of a subclass can do one of the three thing:
--it can implement completely different behaviour, overridding behaviour of parent
+-it can implement completely different behaviour, overriding behaviour of parent
 -simply can call the parent class's parent method, which is implicit
 -or the method can call the parent's class method, and can include other code to run, so can extend behaviour of
  parent class
+ JVM will run the "lowest" method, from subclass to parent class.
+ "public" variables and methods of a superclass could be used by subclass, "private" couldn't be used by subclass
+ Constructor from subclass call constructor from superclass
 
 
 

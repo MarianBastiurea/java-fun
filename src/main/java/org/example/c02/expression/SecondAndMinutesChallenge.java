@@ -19,10 +19,14 @@ public class SecondAndMinutesChallenge {
     public static String getDurationString(int minutes, int seconds) {
         String result;
         int hours, remainingMinutes, remainingSeconds;
-            hours=minutes/60;
-            remainingMinutes=minutes-hours*60;
-            remainingSeconds=seconds;
-            result=hours + "h " + remainingMinutes + "m " + remainingSeconds + "s";
+        if (minutes < 0|| seconds<0) {
+            result = "Invalid value";
+        } else {
+            hours = minutes / 60;
+            remainingMinutes = minutes - hours * 60;
+            remainingSeconds = seconds;
+            result = hours + "h " + remainingMinutes + "m " + remainingSeconds + "s";
+        }
         return result;
     }
 }
