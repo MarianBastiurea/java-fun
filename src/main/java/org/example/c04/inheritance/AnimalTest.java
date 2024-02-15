@@ -1,5 +1,5 @@
 package org.example.c04.inheritance;
-public class Main {
+public class AnimalTest {
 
     public static void main(String[] args) {
 
