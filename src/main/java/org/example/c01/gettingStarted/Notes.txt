@@ -93,6 +93,28 @@ overridden method of a subclass can do one of the three thing:
  "public" variables and methods of a superclass could be used by subclass, "private" couldn't be used by subclass
  Constructor from subclass call constructor from superclass
 
+Overloading method:
+In a single class, could be used in a child class
+have same name
+have different parameters
+may have different return parameters
+may have different access modifiers(private, protected, public)
+may throw different exceptions
+
+Overriding method
+used to override a behaviour which child class has inherited from parent class
+always in two classes parent-child
+must have same name and same parameters
+must have same return type or covariant return
+must not have a lower modifier but may have a higher modifier
+must no throw a new or broader checked exception
+
+in String:
+\t- insert a tab character
+\n- insert a new line character
+\"- insert a double quote character
+\\- insert a backslash character
+""" mark start or end a text block
 
 
 
