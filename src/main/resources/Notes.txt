@@ -7,6 +7,13 @@ Statement is complete command to be executed
 Keyword is any one of a number of reserved word, that have a predefined meaning in Java
 Keywords need to be in lowercase
 Variables are a way to store information in computer
+
+Expression
+
+Expression- computes to a single value
+Statements- Stand alone units of work
+Whitespace- spaces around code ignored by Java and it's purpose for human readability
+Reformat code- change code format to be more easy to read
 Declaration Statement is used to define a variable by indicating the data type, name and eventually set a value
 Expression is a coding construct, that evaluates a single value
 Expression is a code segment in Right side of equals sign in assign or declaration statement
