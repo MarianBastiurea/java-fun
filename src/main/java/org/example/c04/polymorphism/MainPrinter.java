@@ -2,7 +2,7 @@ package org.example.c04.polymorphism;
 
 public class MainPrinter {
     public static void main(String[] args) {
-        Printer printer = new Printer(40, true);
+       /* Printer printer = new Printer(40, true);
         System.out.println(printer);
         System.out.println("Add 100% toner and toner level will be " + printer.addToner(100));
         System.out.println("If I want to print 10 pages in a duplex printer, sheets number used will be: " + printer.printPages(10));
@@ -15,5 +15,15 @@ public class MainPrinter {
         System.out.println(printer);
         System.out.println("Add 10% toner and toner level will be " + printer1.addToner(10));
         System.out.println("Need to print 10 pages and pages printed counter will be " + printer1.printPages(10));
+*/
+
+
+        Printer printer = new Printer(50, true);
+        System.out.println(printer.addToner(50));
+        System.out.println("initial page count = " +printer.getPagesPrinted());
+        int pagesPrinted = printer.printPages(4);
+        System.out.println("Pages printed was " + pagesPrinted +" new total print count for printer = " +printer.getPagesPrinted());
+        pagesPrinted = printer.printPages(2);
+        System.out.println("Pages printed was " + pagesPrinted +" new total print count for printer = " +printer.getPagesPrinted());
     }
 }
