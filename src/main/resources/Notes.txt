@@ -66,6 +66,8 @@ Constructor is used in the creation on a object, that's an instance of a class
 it's a special type of code block that has a specific name and parameters, much like a method.
 Have the same name as class but no return any values.Never include a return type from constructor, not even "void".
 
+Inheritance "IS A" relationship
+
 Constructor chaining is when a constructor explicitly call another overloaded constructor
 You can call a constructor only from another constructor
 
@@ -124,7 +126,10 @@ in String:
 """ mark start or end a text block
 
 
+Composition
 
+it is "HAS A"
+relationship
 
 
 
