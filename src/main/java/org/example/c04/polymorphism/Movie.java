@@ -1,28 +1,27 @@
 package org.example.c04.polymorphism;
 
-public class Movie {
+class Movie{
+private String title;
 
-    private String title;
+public Movie(String title) {
+    this.title = title;
+}
 
-    public Movie(String title) {
-        this.title = title;
-    }
+public void watchMovie() {
 
-    public void watchMovie() {
+    String instanceType = this.getClass().getSimpleName();
+    System.out.println(title + " is a " + instanceType + " film");
+}
 
-        String instanceType = this.getClass().getSimpleName();
-        System.out.println(title + " is a " + instanceType + " film");
-    }
+public static Movie getMovie(String type, String title) {
 
-    public static Movie getMovie(String type, String title) {
-
-        return switch (type.toUpperCase().charAt(0)) {
-            case 'A' -> new Adventure(title);
-            case 'C' -> new Comedy(title);
-            case 'S' -> new ScienceFiction(title);
-            default -> new Movie(title);
-        };
-    }
+    return switch (type.toUpperCase().charAt(0)) {
+        case 'A' -> new Adventure(title);
+        case 'C' -> new Comedy(title);
+        case 'S' -> new ScienceFiction(title);
+        default -> new Movie(title);
+    };
+}
 }
 
 class Adventure extends Movie {
@@ -38,6 +37,10 @@ class Adventure extends Movie {
                 "Pleasant Scene",
                 "Scary Music",
                 "Something Bad Happens");
+    }
+
+    public void watchAdventure() {
+        System.out.println("Watching an Adventure!");
     }
 }
 
@@ -55,6 +58,10 @@ class Comedy extends Movie {
                 "Something even funnier happens",
                 "Happy Ending");
     }
+
+    public void watchComedy() {
+        System.out.println("Watching a Comedy!");
+    }
 }
 
 class ScienceFiction extends Movie {
@@ -71,4 +78,9 @@ class ScienceFiction extends Movie {
                 "Space Guys Chase Aliens",
                 "Planet Blows Up");
     }
+
+    public void watchScienceFiction() {
+        System.out.println("Watching a Science Fiction Thriller!");
+    }
 }
+
