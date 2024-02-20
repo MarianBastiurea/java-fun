@@ -1,4 +1,4 @@
-package org.example.c06List;
+package org.example.c06ArrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
