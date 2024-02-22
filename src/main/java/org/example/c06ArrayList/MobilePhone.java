@@ -47,7 +47,6 @@ public class MobilePhone {
         return true;
     }
 
-
     public boolean updateContact(Contact oldContact, Contact newContact) {
 
         int foundPosition = findContact(oldContact);
