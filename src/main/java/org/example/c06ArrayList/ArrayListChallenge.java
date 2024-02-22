@@ -1,6 +1,7 @@
 package org.example.c06ArrayList;
 
 import java.util.*;
+
 class MainItems {
     private static Scanner scanner = new Scanner(System.in);
     private static ArrayList<String> groceryList = new ArrayList<>();
