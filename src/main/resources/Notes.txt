@@ -131,6 +131,36 @@ Composition
 it is "HAS A"
 relationship
 
+ArrayList
+
+The ArrayList is a class, that really maintains an array in memory, that's actually bigger than what we need,
+in most cases.
+It keeps track of the capacity, which is the actual size of the array in memory.
+But it also keeps track of the elements that've been assigned or set, which is the size of the ArrayList.
+As elements are added to an ArrayList, its capacity may need to grow.  This all happens automatically, behind the scenes.
+This is why the ArrayList is resizeable.
+An ArrayList should be declared, with the type of element in the ArrayList, in angle brackets.
+We can use the diamond operator, when creating a new instance in a declaration statement.
+You should use a specific type, rather than just the Object class, because Java can then perform compile-time
+ type checking
+
+LinkedList
+
+An ArrayList is implemented on top of an array, but a LinkedList is a doubly linked list.
+Both implement all of List's methods, but the LinkedList also implements the Queue and Stack methods as well.
+Iterator is situated between list's elements. Can use hasNext() or hasPrevious() to checked if remains elements
+to be processed
+
+Autoboxing
+assign a primitive to a wrapper variable means boxing. If we let java to do it, this is autoboxing
+Opposite is autounboxing
+
+Enum type
+The enum type is Java's type to support something called an enumeration.
+A special data type that contains predefined constants.
+
+
+
 
 
 

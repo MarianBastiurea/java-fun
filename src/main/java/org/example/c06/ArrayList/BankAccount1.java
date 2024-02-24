@@ -1,4 +1,4 @@
-package org.example.c06ArrayList;
+package org.example.c06.ArrayList;
 import java.util.ArrayList;
 
 record Customer(String name, ArrayList<Double> transactions) {
