@@ -1,4 +1,4 @@
-package org.example.c06ArrayList;
+package org.example.c06.ArrayList;
 
 import java.util.LinkedList;
 import java.util.ListIterator;
