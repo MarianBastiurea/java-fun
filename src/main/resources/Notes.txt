@@ -156,8 +156,20 @@ assign a primitive to a wrapper variable means boxing. If we let java to do it, 
 Opposite is autounboxing
 
 Enum type
+
 The enum type is Java's type to support something called an enumeration.
 A special data type that contains predefined constants.
+
+Abstraction
+
+An abstract method has a method signature, and a return type, but doesn't have a method body.
+Because of this, we say an abstract method is unimplemented.
+an abstract class contain an abstract method
+A concrete method has a method body, usually with at least one statement.
+This means it has operational code, that gets executed, under the right conditions.
+A concrete method is said to implement an abstract method, if it overrides one.
+Abstract classes and interfaces, can have a mix of abstract and concrete methods.
+
 
 
 
