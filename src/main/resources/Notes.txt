@@ -172,6 +172,35 @@ Abstract classes and interfaces, can have a mix of abstract and concrete methods
 
 
 
+An interface is similar to an abstract class, although it isn't a class at all.
+
+public interface F…
+public class A… implements F….
+
+It's a special type, that's more like a contract between the class and client code, that the compiler enforces.
+By declaring it's using an interface, your class must implement all the abstract methods, on the interface.
+If we omit an access modifier on a class member, it's implicitly package private.
+If we omit an access modifier on an interface member, it's implicitly public.
+Changing the access modifier of a method to protected, on an interface, is a compiler error, whether the method is concrete or abstract.
+Only a concrete method can have private access.
+When we use the final modifier, we prevent any further modifications to that component.
+•a final method means it can't be overridden by a subclass.
+•a final field means an object's field can't be reassigned or given a different value, after its initialization.
+•a final static field is a class field that can't be reassigned, or given a different value, after the class's initialization process.
+•a final class can't be overridden, meaning no class can use it, in the extends clause.
+•a final variable, in a block of code, means that once it's assigned a value, any remaining code in the block can't change it.
+A constant in Java is a variable that can't be changed.
+A constant variable is a final variable of primitive type, or type String, that is initialized with a constant expression .
+An extension method is identified by the modifier default, so it's more commonly known as the default method.
+This method is a concrete method, meaning it has a code block, and we can add statements to it.
+So like overriding a method on a class, you have three choices, when you override a default method on an interface.
+•You can choose not to override it at all.
+•You can override the method and write code for it, so that the interface method isn't executed.
+•Or you can write your own code, and invoke the method on the interface, as part of your implementation.
+Static methods don't need to specify a public access modifier, because it's implied.
+When you call a public static method on an interface, you must use the interface name as a qualifier.
+A private static method can be accessed by either a public static method, a default method, or a private non-static method.
+A private non-static method is used to support default methods, and other private methods.
 
 
 
