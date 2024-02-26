@@ -15,10 +15,12 @@ public class Main2 {
         animal.move();
 
 
-     flier.takeOff();
+    /* flier.takeOff();
         flier.fly();
         tracked.track();
         flier.land();
+
+     */
 
 
         inFlight(flier);
