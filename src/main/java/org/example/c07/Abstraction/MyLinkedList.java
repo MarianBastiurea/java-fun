@@ -27,10 +27,11 @@ public class MyLinkedList implements NodeList {
 
     @Override
     public boolean addItem(ListItem newItem) {
-        if (newItem != null) {
+        if (this.root == null) {
             this.root = newItem;
             return true;
         }
+
         ListItem currentItem = this.root;
         while (currentItem != null) {
             int comparison = (currentItem.compareTo(newItem));
