@@ -1,4 +1,4 @@
-package org.example.c06.ArrayList;
+package org.example.c07.LikedList;
 
 import java.util.LinkedList;
 import java.util.ListIterator;

@@ -6,7 +6,7 @@ import java.util.Collections;
 /*
 Write a Java program that swaps two elements in an array list.
  */
-public class swap {
+public class Swap {
     public static void main(String[] args) {
         ArrayList<Integer> numbers = new ArrayList<>();
         for (int i = 0; i < 10; i++) {

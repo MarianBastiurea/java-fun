@@ -1,4 +1,4 @@
-package org.example.c07.Abstraction;
+package org.example.c08.Abstraction;
 
 public abstract class ProductForSale {
     protected String type;
