@@ -13,13 +13,13 @@ public class IsEmpty {
             numbers.add(i);
         }
         System.out.println("ArrayList is " + numbers + " ");
-        int size=numbers.size();
-        int size1=numbers1.size();
-        if(size>0)
-        {System.out.println("Size of ArrayList numbers is: "+size);
+        int size = numbers.size();
+        int size1 = numbers1.size();
+        if (size > 0) {
+            System.out.println("Size of ArrayList numbers is: " + size);
         } else System.out.println("ArrayList is empty");
-        if(size1>0)
-        {System.out.println("Size of ArrayList numbers1 is: "+size1);
+        if (size1 > 0) {
+            System.out.println("Size of ArrayList numbers1 is: " + size1);
         } else System.out.println("ArrayList numbers1 is empty");
     }
 }

@@ -23,10 +23,10 @@ public class Compare {
         boolean result=true;
         boolean result1=true;
         System.out.println(result);
-        if (result ==numbers1.equals(numbers)){
+        if (numbers1.equals(numbers)){
             System.out.println("ArrayList numbers and number1 are equal");
         }
-        if (result1 !=numbers1.equals(numbers2)){
+        if (!numbers1.equals(numbers2)){
             System.out.println("ArrayList numbers2 and number1 aren't equal");
         }
     }
