@@ -17,12 +17,12 @@ class TripItinerary {
         addMoreElements(placesToVisit);
         System.out.println(placesToVisit);
 
-//        removeElements(placesToVisit);
-//        System.out.println(placesToVisit);
+       removeElements(placesToVisit);
+       System.out.println(placesToVisit);
 
-//        gettingElements(placesToVisit);
+      // gettingElements(placesToVisit);
 
-//        printItinerary3(placesToVisit);
+        printItinerary3(placesToVisit);
 
         testIterator(placesToVisit);
 
