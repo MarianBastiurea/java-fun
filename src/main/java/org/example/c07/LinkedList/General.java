@@ -6,14 +6,7 @@ import java.util.LinkedList;
 
 public class General {
     public static void main(String[] args) {
-        LinkedList<String> list = new LinkedList<>();
-        list.add("Red");
-        list.add("Orange");
-        list.add("Yellow");
-        list.add("Green");
-        list.add("Blue");
-        list.add("Indigo");
-        list.add("Violet");
+        LinkedList<String> list = buildList();
         System.out.println(" Original" + list);
         firstAndLastOccurrenceOfASpecifiedElement(list);
         displayElementsAndTheirPosition(list);
@@ -23,7 +16,6 @@ public class General {
         removeElementsAtSpecifiedPosition(list, 2);
         removeFirstAndLastElements(list);
         removeAllElements(list);
-
     }
 
     public static LinkedList buildList() {
