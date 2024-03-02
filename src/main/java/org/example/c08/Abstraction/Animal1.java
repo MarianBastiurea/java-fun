@@ -1,7 +1,8 @@
 package org.example.c08.Abstraction;
 
 
-enum FlightStages implements Trackable {GROUNDED, LAUNCH, CRUISE, DATA_COLLECTION;
+enum FlightStages implements Trackable {
+    GROUNDED, LAUNCH, CRUISE, DATA_COLLECTION;
 
     @Override
     public void track() {
