@@ -13,7 +13,6 @@ interface Account {
     double withdraw(double amount);
 
     double getBalance();
-
 }
 
 class SavingsAccount implements Account {
@@ -39,9 +38,14 @@ class SavingsAccount implements Account {
         return balance += balance * interestRate / 100;
     }
 
+
     @Override
     public double getBalance() {
         return balance;
+    }
+
+    public double getInterestRate() {
+        return interestRate;
     }
 }
 
@@ -71,6 +75,14 @@ class CurrentAccount implements Account {
     @Override
     public double getBalance() {
         return balance;
+    }
+
+    public double transferSendMoney(double amount) {
+        return balance -= amount;
+    }
+
+    public double transferReceiveMoney(double amount) {
+        return balance += amount;
     }
 
 }

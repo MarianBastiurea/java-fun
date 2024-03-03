@@ -1,7 +1,11 @@
 package org.example.c08.Abstraction;
+
 import java.util.*;
+
 public class Bank {
     private List accounts;
+    private List sendingMoneyAccount;
+    private List receivingMoneyAccount;
 
     public Bank() {
         accounts = new ArrayList<>();
@@ -15,16 +19,24 @@ public class Bank {
         accounts.remove(account);
     }
 
-    public void deposit(Account account, double amount) {
-        account.deposit(amount);
+    public double deposit(Account account, double amount) {
+        return account.deposit(amount);
     }
 
 
-    public void withdraw(Account account, double amount) {
-        account.withdraw(amount);
+    public double withdraw(Account account, double amount) {
+
+        return account.withdraw(amount);
     }
+
+    public void transferSendMoney(Account sendingMoneyAccount, double amount, Account receivingMoneyAccount) {
+        sendingMoneyAccount.withdraw(amount);
+        receivingMoneyAccount.deposit(amount);
+
+    }
+
     public void printAccountBalances(Account account) {
-            System.out.println("Account balance: " + account.getBalance());
-        }
+        System.out.println("Account balance: " + account.getBalance());
+    }
 }
 

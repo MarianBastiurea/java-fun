@@ -4,7 +4,7 @@ public interface Client {
     double monthlySalary();
 }
 
-class EmployeeClient implements Account, Client{
+class EmployeeClient implements Account, Client {
     String firstName;
     String LastName;
     double hourlyRates;
@@ -24,7 +24,6 @@ class EmployeeClient implements Account, Client{
     }
 
 
-
     public String getLastName() {
         return LastName;
     }
@@ -37,7 +36,6 @@ class EmployeeClient implements Account, Client{
     public double getTimeSheet() {
         return timeSheet;
     }
-
 
 
     @Override
@@ -57,6 +55,6 @@ class EmployeeClient implements Account, Client{
 
     @Override
     public double monthlySalary() {
-        return getTimeSheet()*getHourlyRates();
+        return getTimeSheet() * getHourlyRates();
     }
 }
