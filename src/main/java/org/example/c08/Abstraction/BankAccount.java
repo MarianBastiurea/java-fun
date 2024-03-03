@@ -11,12 +11,12 @@ public abstract class BankAccount {
     abstract double withdraw();
 }
 
-class SavingsAccount extends BankAccount {
+class SavingsAccount1 extends BankAccount {
     double balance;
     double amountDeposit;
     double amountWithdraw;
 
-    public SavingsAccount(double balance, double amountDeposit, double amountWithdraw) {
+    public SavingsAccount1 (double balance, double amountDeposit, double amountWithdraw) {
         this.balance = balance;
         this.amountDeposit = amountDeposit;
         this.amountWithdraw = amountWithdraw;
@@ -39,12 +39,12 @@ class SavingsAccount extends BankAccount {
     }
 }
 
-class CurrentAccount extends BankAccount {
+class CurrentAccount1 extends BankAccount {
     double balance;
     double amountDeposit;
     double amountWithdraw;
 
-    public CurrentAccount(double balance, double amountDeposit, double amountWithdraw) {
+    public CurrentAccount1 (double balance, double amountDeposit, double amountWithdraw) {
         this.balance = balance;
         this.amountDeposit = amountDeposit;
         this.amountWithdraw = amountWithdraw;

@@ -2,10 +2,10 @@ package org.example.c08.Abstraction;
 
 public class MainAnimal3 {
     public static void main(String[] args) {
-        Lion lion = new Lion();
+        Lion3 lion = new Lion3();
         lion.eat();
         lion.sleep();
-        Tiger tiger = new Tiger();
+        Tiger3 tiger = new Tiger3();
         tiger.eat();
         tiger.sleep();
         Deer deer = new Deer();

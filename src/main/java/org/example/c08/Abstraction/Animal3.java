@@ -11,7 +11,7 @@ public abstract class Animal3 {
     abstract void sleep();
 }
 
-class Lion extends Animal3 {
+class Lion3 extends Animal3 {
 
     @Override
     void eat() {
@@ -24,7 +24,7 @@ class Lion extends Animal3 {
     }
 }
 
-class Tiger extends Animal3 {
+class Tiger3 extends Animal3 {
 
     @Override
     void eat() {
