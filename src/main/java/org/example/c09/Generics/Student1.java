@@ -2,7 +2,10 @@ package org.example.c09.Generics;
 
 import java.util.Random;
 
-public class Student1 {
+public class Student1 implements QueryItem, Comparable<Student1> {
+
+    private static int LAST_ID = 10_000;
+    private int studentId;
 
     private String name;
     private String course;
@@ -14,6 +17,7 @@ public class Student1 {
     private static String[] courses = {"C++", "Java", "Python"};
 
     public Student1() {
+        studentId = LAST_ID++;
         int lastNameIndex = random.nextInt(65, 91);
         name = firstNames[random.nextInt(5)] + " " + (char) lastNameIndex;
         course = courses[random.nextInt(3)];
@@ -22,10 +26,27 @@ public class Student1 {
 
     @Override
     public String toString() {
-        return "%-15s %-15s %d".formatted(name, course, yearStarted);
+        return "%d %-15s %-15s %d".formatted(studentId, name, course, yearStarted);
     }
 
     public int getYearStarted() {
         return yearStarted;
+    }
+
+    @Override
+    public boolean matchFieldValue(String fieldName, String value) {
+
+        String fName = fieldName.toUpperCase();
+        return switch(fName) {
+            case "NAME" -> name.equalsIgnoreCase(value);
+            case "COURSE" -> course.equalsIgnoreCase(value);
+            case "YEARSTARTED" -> yearStarted == (Integer.parseInt(value));
+            default -> false;
+        };
+    }
+
+    @Override
+    public int compareTo(Student1 o) {
+        return Integer.valueOf(studentId).compareTo(o.studentId);
     }
 }
