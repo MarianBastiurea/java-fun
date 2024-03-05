@@ -238,7 +238,7 @@ You want to specify the behavior of a particular data type, but you're not conce
 You want to separate different behavior.
 
 Generics
-class Teamr<T>{
+class Team<T>{
 private T field;
 }
 For the generic class, the field's type is that placeholder, just T, and this means it can be any type at all.
