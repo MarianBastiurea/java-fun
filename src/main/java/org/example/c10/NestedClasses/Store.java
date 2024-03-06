@@ -1,4 +1,4 @@
-package org.example.c10.nestedClasses;
+package org.example.c10.NestedClasses;
 
 public class Store {
 
