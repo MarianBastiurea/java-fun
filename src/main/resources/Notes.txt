@@ -278,6 +278,49 @@ This declaration establishes what is called an upper bound, on the types that ar
 An upper bound permits access to the bounded type's functionality.
 An upper bound limits the kind of type parameters you can use when using a generic class.  The type used must be equal to, or a subtype of the bounded type.
 
+Lambda expression
+
+(parameter1, parameter2,...)->expression;
+The lambda expression parameters are determined by the associated interface's method, the functional method.
+A functional interface is an interface that has one, and only one, abstract method.
+This is how Java can infer the method, to derive the parameters and return type, for the lambda expression.
+You may also see this referred to as SAM, which is short for Single Abstract Method, which is called the functional method.
+A functional interface is the target type for a lambda expression.
+The functional interface is the framework that lets a lambda expression be used.
+Lambda expressions are also called lambdas for short.
+Many of Java's classes, use functional interfaces in their method signatures, which allows us to pass lambdas as arguments to them.
+element->System.out.println(element);
+
+(String element)->System.out.println(element);
+
+(var element)->{
+code block
+}
+
+Many of the stream operations take functional interfaces as parameters, meaning we can code them with lambda expressions.
+(a,b)->a+b
+ Parentheses are always required. Explicit types are not.
+
+(Integer a, Integer b)->a+b
+If you use an explicit type for one parameter, you must use explicit types for all the parameters.
+
+(var a, var b)->a+b
+If you use var for one parameter, you must use var for all parameters.
+
+(a,b)->a+b
+when not using curly braces, the return keyword is unnecessary, and will throw a compiler error.
+
+(a, b)->{
+var c=a+b;
+return c;
+}
+If you use a statement block, meaning you use the curly braces, a return is required.
+
+
+
+
+
+
 */
 
 
