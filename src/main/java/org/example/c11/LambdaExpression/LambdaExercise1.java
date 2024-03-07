@@ -34,7 +34,6 @@ public class LambdaExercise1 {
             Arrays.asList(sentence.split(" ")).forEach(s -> System.out.println(s));
         };
 
-
         printTheParts.accept("alpha beta charlie delta");
         printWordsLambda.accept("alpha beta charlie");
         printWordsForEach.accept("alpha beta charlie delta foxtrot");
