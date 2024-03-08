@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.function.Predicate;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class LambdaExercise2 {
@@ -27,17 +28,32 @@ public class LambdaExercise2 {
 
         //Write a Java program to implement a lambda expression to convert a list of strings to uppercase and lowercase.
 
-        List str3 = Arrays.asList("red", "Green", "ORANGE");
-        str3.replaceAll(str3.get(0)->
-          str3.get(0).toLowerCase();
-        System.out.println("change"+str3.get(0)+"from lowercase to uppercase"+ ;
+       List<String> str3 = Arrays.asList("Red", "Green", "ORANGE");
+       System.out.println("Initial list of string is: "+str3);
+       // change all list of strings to lowercase
+        str3.replaceAll(str->
+        str.toLowerCase());
+        System.out.println("List of string converted to lowercase: "+str3);
 
-        str3.replaceAll(str -> str.toLowerCase());
+        // change all list of strings to uppercase
+        str3.replaceAll(str->
+                str.toUpperCase());
+        System.out.println("change all list of string to uppercase"+str3);
 
+//Write a Java program to implement a lambda expression to filter out even and odd numbers from a list of integers.`
 
-
+        List<Integer> list1 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> listEven = list1.stream()
+                .filter(n -> n % 2 == 0)
+                .collect(Collectors.toList());
+        System.out.println("Even numbers are:" + listEven);
+        List<Integer> listOdd = list1.stream()
+                .filter(n -> n % 2 != 0)
+                .collect(Collectors.toList());
+        System.out.println("Even numbers are:" + listOdd);
 
     }
 
-    }
+
 }
+
