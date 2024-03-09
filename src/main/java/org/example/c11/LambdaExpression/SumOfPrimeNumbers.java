@@ -1,10 +1,9 @@
 package org.example.c11.LambdaExpression;
 
 import java.util.stream.IntStream;
-import java.util.*;
 import java.util.function.IntPredicate;
 
-public class LambdaExercise5 {
+public class SumOfPrimeNumbers {
     public static void main(String[] args) {
         int start = 100;
         int end = 200;

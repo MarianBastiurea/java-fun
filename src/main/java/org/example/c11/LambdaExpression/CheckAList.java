@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.function.Predicate;
 import java.util.function.Function;
 
-public class LambdaExercise6 {
+public class CheckAList {
     public static void main(String[] args) {
 
         //Write a Java program to implement a lambda expression to check if a list of strings are all uppercase or all

@@ -2,7 +2,7 @@ package org.example.c11.LambdaExpression;
 
 import java.util.*;
 
-public class LambdaExercise7 {
+public class AverageLengthOfAString {
     public static void main(String[] args) {
         //Write a Java program to implement a lambda expression to find the average length of strings in a list.
         List<String> colors = Arrays.asList("Red", "Black", "White", "Orange", "Blue");

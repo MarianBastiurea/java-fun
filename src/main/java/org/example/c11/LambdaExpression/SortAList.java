@@ -3,7 +3,7 @@ package org.example.c11.LambdaExpression;
 import java.util.*;
 
 //Write a Java program to implement a lambda expression to sort a list of objects based on a specific attribute.
-public class LambdaExercise4 {
+public class SortAList {
     public static void main(String[] args) {
         List<Student> student_list = new ArrayList<>();
         student_list.add(new Student("Adriana Jamie", 15, "X"));
