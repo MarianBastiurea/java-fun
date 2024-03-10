@@ -1,6 +1,6 @@
 package org.example.c11.LambdaExpression;
 
-import java.util.*;
+import  java.util.*;
 import java.util.function.Consumer;
 
 public class SplitASentence {

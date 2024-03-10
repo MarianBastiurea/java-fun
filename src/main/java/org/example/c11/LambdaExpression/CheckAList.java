@@ -1,8 +1,9 @@
 package org.example.c11.LambdaExpression;
 
-import java.util.*;
 import java.util.function.Predicate;
 import java.util.function.Function;
+import java.util.Arrays;
+import java.util.List;
 
 public class CheckAList {
     public static void main(String[] args) {

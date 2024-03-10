@@ -1,6 +1,6 @@
 package org.example.c11.LambdaExpression;
-
 import java.util.*;
+import java.util.List;
 
 //Write a Java program to implement a lambda expression to sort a list of objects based on a specific attribute.
 public class SortAList {

@@ -2,8 +2,11 @@ package org.example.c11.LambdaExpression;
 
 import java.util.*;
 import java.util.Random;
+import java.util.List;
 
-public class MainListChallenge {
+
+
+public class ListChallenge {
 
     private static Random random = new Random();
 

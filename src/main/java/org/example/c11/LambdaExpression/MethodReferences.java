@@ -18,7 +18,7 @@ class PlainOld {
     }
 }
 
-public class mainMethodReferences {
+public class MethodReferences {
     public static void main(String[] args) {
 
         List<String> list = new ArrayList<>(List.of(
@@ -36,7 +36,7 @@ public class mainMethodReferences {
         System.out.println("Getting array");
         PlainOld[] pojo1 = seedArray(PlainOld::new, 10);
 
-        calculator((s1, s2) -> s1.concat(s2), "Hello ", "World");
+        calculator(String::concat, "Hello ", "World");
         calculator(String::concat, "Hello ", "World");
 
         BinaryOperator<String> b1 = String::concat;
