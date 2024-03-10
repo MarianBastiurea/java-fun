@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-public class List {
+public class MainList {
 
     private static Random random = new Random();
 
