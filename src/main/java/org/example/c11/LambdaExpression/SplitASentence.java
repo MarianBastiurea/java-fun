@@ -3,7 +3,7 @@ package org.example.c11.LambdaExpression;
 import java.util.*;
 import java.util.function.Consumer;
 
-public class LambdaExercise1 {
+public class SplitASentence {
     public static void main(String[] args) {
 
         // initial
