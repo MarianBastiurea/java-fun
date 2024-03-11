@@ -3,7 +3,7 @@ package org.example.c12.Collections;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Comparator;
 public record Card(Suit suit, String face, int rank) {
 
     public enum Suit {
@@ -12,6 +12,10 @@ public record Card(Suit suit, String face, int rank) {
         public char getImage() {
             return (new char[]{9827, 9830, 9829, 9824})[this.ordinal()];
         }
+    }
+
+    public static Comparator<Card> sortRankReversedSuit() {
+        return Comparator.comparing(Card::rank).reversed().thenComparing(Card::suit);
     }
 
     @Override
@@ -75,4 +79,3 @@ public record Card(Suit suit, String face, int rank) {
     }
 
 }
-
