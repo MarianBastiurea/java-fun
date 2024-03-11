@@ -316,6 +316,17 @@ return c;
 }
 If you use a statement block, meaning you use the curly braces, a return is required.
 
+The Four basic categories of Functional Interfaces in java.util.function package
+Consumer    void accept(T t)    execute code without returning data
+Function    R apply(T t)        return a result of an operation or function
+Predicate   boolean test(T t)   test if a condition is true or false
+Supplier    T get()             return an instance of something
+
+BiConsumer void accept(T t, U u)
+
+
+
+
 
 
 

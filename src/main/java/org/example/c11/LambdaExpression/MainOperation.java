@@ -19,7 +19,7 @@ public class MainOperation {
         }
 
         System.out.println("-------");
-        list.forEach((var myString) -> System.out.println(myString));
+        list.forEach(System.out::println);
 
         System.out.println("-------");
         String prefix = "nato";
@@ -28,7 +28,7 @@ public class MainOperation {
             System.out.println(prefix + " " + myString + " means " + first);
         });
 
-        int result = calculator((var a, var b) -> a + b,5, 2);
+        int result = calculator(Integer::sum,5, 2);
         var result2 = calculator((a, b) -> a / b, 10.0, 2.5);
         var result3 = calculator(
                 (a, b) -> a.toUpperCase() + " " + b.toUpperCase(),
@@ -54,18 +54,18 @@ public class MainOperation {
                         System.out.printf("[lat:%.3f lon:%.3f]%n", lat, lng)));
 
         list.removeIf(s -> s.equalsIgnoreCase("bravo"));
-        list.forEach(s -> System.out.println(s));
+        list.forEach(System.out::println);
 
         list.addAll(List.of("echo", "easy", "earnest"));
-        list.forEach(s -> System.out.println(s));
+        list.forEach(System.out::println);
 
         System.out.println("-------");
         list.removeIf(s -> s.startsWith("ea"));
-        list.forEach(s -> System.out.println(s));
+        list.forEach(System.out::println);
 
         list.replaceAll(s -> s.charAt(0) + " - " + s.toUpperCase());
         System.out.println("-------");
-        list.forEach(s -> System.out.println(s));
+        list.forEach(System.out::println);
 
         String[] emptyStrings = new String[10];
         System.out.println(Arrays.toString(emptyStrings));
