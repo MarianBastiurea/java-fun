@@ -8,7 +8,7 @@ public class TreeSetMain {
 
         List<Contact> phones = ContactData.getData("phone");
         List<Contact> emails = ContactData.getData("email");
-        
+
         Comparator<Contact> mySort = Comparator.comparing(Contact::getName);
         NavigableSet<Contact> sorted = new TreeSet<>(mySort);
         sorted.addAll(phones);
