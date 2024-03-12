@@ -61,7 +61,6 @@ public class MainContact {
         symmetricDiff2.removeAll(intersectAB);
         printData("Symmetric Difference: phones and emails", symmetricDiff2);
 
-
     }
 
     public static void printData(String header, Collection<Contact> contacts) {
@@ -70,5 +69,4 @@ public class MainContact {
         System.out.println(header);
         System.out.println("----------------------------------------------");
         contacts.forEach(System.out::println);
-    }
-}
+    }}
