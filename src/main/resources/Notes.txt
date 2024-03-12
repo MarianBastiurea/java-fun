@@ -324,6 +324,41 @@ Supplier    T get()             return an instance of something
 
 BiConsumer void accept(T t, U u)
 
+Collection
+
+A collection is just an object that represents a group of objects.
+The Collection interface is the root of the collection hierarchy.
+Like most roots in software hierarchies, it's an abstract representation of the behavior you'd need, for managing a
+group of objects.
+Remember, the interface let's us describe objects by what they can do, rather than what they really look like, or how
+they're ultimately constructed.
+
+A QUEUE is a collection designed for holding elements prior to processing, in other words the processing order matters,
+ so the first and last positions, or the head and tail, are prioritized.
+
+A SET is a collection conceptually based off of a mathematical set.
+
+A MAP is a collection that stores key and value pairs.
+ The keys are a set, and the values are a separate collection, where the key keeps a reference to a value.
+ Keys need to be unique, but values don't.
+ Elements in a tree are stored in a key value Node, also called an Entry.
+
+It's important to understand that the Collections class is not the Collections Framework.
+The framework contains many interfaces and implemented classes, as well as helper classes, which this
+Collections class is just one example
+
+Hash Code
+
+HashSet and HashMap, are based on the hash codes of objects.
+A hash code can be any valid integer, so it could be one of 4.2 billion valid numbers.
+A hashing mechanism will take an integer hash code, and a capacity declaration which specifies the number of buckets to distribute the objects over.
+It then translates the range of hash codes into a range of bucket identifiers.
+Hashed implementations use a combination of the hash code and other means, to provide the most efficient bucketing system, to achieve this desired uniform distribution of the objects.
+Objects can be considered equal in other instances as well, if their attribute values are equal, for example.
+The String class overrides this method, so that it compares all the characters in each String, to confirm that two Strings are equal.
+Objects that are considered equal should produce the same hashCode.
+
+
 
 
 
