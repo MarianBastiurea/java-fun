@@ -181,14 +181,17 @@ It's a special type, that's more like a contract between the class and client co
 By declaring it's using an interface, your class must implement all the abstract methods, on the interface.
 If we omit an access modifier on a class member, it's implicitly package private.
 If we omit an access modifier on an interface member, it's implicitly public.
-Changing the access modifier of a method to protected, on an interface, is a compiler error, whether the method is concrete or abstract.
+Changing the access modifier of a method to protected, on an interface, is a compiler error, whether the method is
+ concrete or abstract.
 Only a concrete method can have private access.
 When we use the final modifier, we prevent any further modifications to that component.
 •a final method means it can't be overridden by a subclass.
 •a final field means an object's field can't be reassigned or given a different value, after its initialization.
-•a final static field is a class field that can't be reassigned, or given a different value, after the class's initialization process.
+•a final static field is a class field that can't be reassigned, or given a different value, after the class's
+initialization process.
 •a final class can't be overridden, meaning no class can use it, in the extends clause.
-•a final variable, in a block of code, means that once it's assigned a value, any remaining code in the block can't change it.
+•a final variable, in a block of code, means that once it's assigned a value, any remaining code in the block can't
+change it.
 A constant in Java is a variable that can't be changed.
 A constant variable is a final variable of primitive type, or type String, that is initialized with a constant expression .
 An extension method is identified by the modifier default, so it's more commonly known as the default method.
@@ -201,12 +204,14 @@ Static methods don't need to specify a public access modifier, because it's impl
 When you call a public static method on an interface, you must use the interface name as a qualifier.
 A private static method can be accessed by either a public static method, a default method, or a private non-static method.
 A private non-static method is used to support default methods, and other private methods.
-Abstract classes are very similar to interfaces. You can't instantiate either of them. Both types may contain a mix of methods declared with, or without a method block.
+Abstract classes are very similar to interfaces. You can't instantiate either of them. Both types may contain a mix of
+ methods declared with, or without a method block.
 With abstract classes, you can declare fields that aren't static and final, instance fields in other words.
 Also with abstract classes, you can use any of the four access modifiers for its concrete methods.
 You can also use all but the private access modifier, for its abstract methods.
 An abstract class can extend only one parent class, but it can implement multiple interfaces.
-When an abstract class is subclassed, the subclass usually provides implementations for all of the abstract methods in its parent class.
+When an abstract class is subclassed, the subclass usually provides implementations for all of the abstract methods
+ in its parent class.
 However, if it doesn't, then the subclass must also be declared abstract.
 
 Use Abstract when...
@@ -245,7 +250,8 @@ For the generic class, the field's type is that placeholder, just T, and this me
 The T in the angle brackets means it's the same type as the T, specified as the type of the field.
 Now, using T is just a convention, short for whatever type you want to use this Team class for.
 But you can put anything you want in there.
-Single letter types are the convention however, and they're a lot easier to spot in the class code, so let me encourage you to stick to this convention.
+Single letter types are the convention however, and they're a lot easier to spot in the class code, so let me encourage
+you to stick to this convention.
 
 could be multiple type:
 class Team<T1,T2,T3>{
@@ -276,7 +282,8 @@ This is saying the parameterized type T, has to be a Player, or a subtype of Pla
 Now Player in this case could have been either a class or an interface, the syntax would be the same.
 This declaration establishes what is called an upper bound, on the types that are allowed to be used with this class
 An upper bound permits access to the bounded type's functionality.
-An upper bound limits the kind of type parameters you can use when using a generic class.  The type used must be equal to, or a subtype of the bounded type.
+An upper bound limits the kind of type parameters you can use when using a generic class.  The type used must be equal
+ to, or a subtype of the bounded type.
 
 Lambda expression
 
@@ -288,7 +295,8 @@ You may also see this referred to as SAM, which is short for Single Abstract Met
 A functional interface is the target type for a lambda expression.
 The functional interface is the framework that lets a lambda expression be used.
 Lambda expressions are also called lambdas for short.
-Many of Java's classes, use functional interfaces in their method signatures, which allows us to pass lambdas as arguments to them.
+Many of Java's classes, use functional interfaces in their method signatures, which allows us to pass lambdas as
+arguments to them.
 element->System.out.println(element);
 
 (String element)->System.out.println(element);
@@ -351,12 +359,62 @@ Hash Code
 
 HashSet and HashMap, are based on the hash codes of objects.
 A hash code can be any valid integer, so it could be one of 4.2 billion valid numbers.
-A hashing mechanism will take an integer hash code, and a capacity declaration which specifies the number of buckets to distribute the objects over.
+A hashing mechanism will take an integer hash code, and a capacity declaration which specifies the number of buckets
+to distribute the objects over.
 It then translates the range of hash codes into a range of bucket identifiers.
-Hashed implementations use a combination of the hash code and other means, to provide the most efficient bucketing system, to achieve this desired uniform distribution of the objects.
+Hashed implementations use a combination of the hash code and other means, to provide the most efficient bucketing
+system, to achieve this desired uniform distribution of the objects.
 Objects can be considered equal in other instances as well, if their attribute values are equal, for example.
-The String class overrides this method, so that it compares all the characters in each String, to confirm that two Strings are equal.
+The String class overrides this method, so that it compares all the characters in each String, to confirm that
+ two Strings are equal.
 Objects that are considered equal should produce the same hashCode.
+
+The Set
+A Set is not implicitly ordered.
+A Set contains no duplicates.
+A Set may contain a single null element.
+Sets can be useful because operations on them are very fast.
+The set interface defines the basic methods add, remove and clear, to maintain the items in the set.
+We can also check if a specific item is in the set using the contains method.
+Interestingly enough, there's no way to retrieve an item from a set.
+You can check if something exists, using contains, and you can iterate over all the elements in the set, but attempting
+ to get the 10th element, for example, from a set isn't possible, with a single method.
+
+The HashSet class
+
+When you're trying to understand data in multiple sets, you might want to get the data that's in all the sets,
+that's in every set, or the data where there's no overlap.
+The collection interface's bulk operations (addAll, retainAll, removeAll, and containAll) can be used to perform these
+set operations.
+If you need an ordered set, you'll want to consider either the LinkedHashSet or the TreeSet.
+A LinkedHashSet maintains the insertion order of the elements.
+The TreeSet is a sorted collection, sorted by the natural order of the elements, or by specifying the sort during the
+creation of the set.
+The LinkedHashSet extends the HashSet class.
+The iteration order is therefore the same as the insertion order of the elements, meaning the order is predictable.
+All the methods for the LinkedHashSet are the same as those for the HashSet.
+A TreeSet's class, uses a data structure that's a derivative of what's called a binary search tree, or Btree for short,
+which is based on the concept and efficiencies of the binary search
+As elements are added to a TreeSet, they're organized in the form of a tree, where the top of the tree represents that
+mid point of the elements.
+Further binary divisions become nodes under that.
+The left node and its children are elements that are less than the parent node.
+The right node and its children are elements that are greater than the parent node.
+Instead of looking through all the elements in the collection to locate a match, this allows the tree to be
+quickly traversed, each node a simple decision point.
+The main point is the tree remains balanced as elements are added.
+Elements which implement Comparable (said to have a natural order sort, like Strings and numbers) can be elements
+of a TreeSet.
+If your elements don't implement Comparable, you must pass a Comparator to the constructor.
+The TreeSet does offer many advantages, in terms of built-in functionality over the other two Set implementations,
+but it does come at a higher cost.
+If your number of elements is not large, or you want a collection that's sorted, and continuously re-sorted as you
+add and remove elements, and that shouldn't contain duplicate elements, the TreeSet is a good alternative to the ArrayList.
+
+
+
+
+
 
 
 
