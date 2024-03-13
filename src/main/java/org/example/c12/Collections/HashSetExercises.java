@@ -46,38 +46,44 @@ public class HashSetExercises {
         String[] colorsArray = new String[colorsClone.size()];
         colorsClone.toArray(colorsArray);
         System.out.println("Array of colors:");
-        Arrays.stream(colorsArray).map(s ->" "+ s).forEach(System.out::println);
+        Arrays.stream(colorsArray).map(s -> " " + s).forEach(System.out::println);
 
         //Write a Java program to convert a hash set to a tree set.
         System.out.println("TreeSet elements are: ");
-        Set<String> colorsSet=new TreeSet<String>(colorsClone);
+        Set<String> colorsSet = new TreeSet<String>(colorsClone);
         colorsSet.forEach(System.out::println);
 
         //Write a Java program to find numbers less than 7 in a tree set.
-        TreeSet<Integer> numbers=new TreeSet<>();
+        TreeSet<Integer> numbers = new TreeSet<>();
         numbers.add(1);
         numbers.add(2);
         numbers.add(10);
         numbers.add(6);
-        System.out.println("first numbers list is: "+numbers);
+        System.out.println("first numbers list is: " + numbers);
         System.out.println("numbers lower than 7 are:");
-        for(Integer num:numbers){
-            if(num<7){
+        for (Integer num : numbers) {
+            if (num < 7) {
                 System.out.println(num);
             }
         }
 
         //Write a Java program to compare two hash set.
-        TreeSet<Integer> numbers1=new TreeSet<>();
+        TreeSet<Integer> numbers1 = new TreeSet<>();
         numbers1.add(1);
         numbers1.add(2);
         numbers1.add(11);
         numbers1.add(61);
-        System.out.println("Second list of number: "+numbers1);
+        System.out.println("Second list of number: " + numbers1);
         System.out.println("compare first list with second list of numbers:");
-        for(Integer num:numbers){
-            System.out.println(numbers1.contains(num)?"Yes":"No");
+        for (Integer num : numbers) {
+            System.out.print(num + " ");
+            System.out.println(numbers1.contains(num) ? "Yes" : "No");
         }
+
+        //Write a Java program to compare two sets and retain elements that are the same.
+        Set<Integer> sameNumber = new HashSet<>(numbers);
+        sameNumber.retainAll(numbers1);
+        System.out.println("same number in both list: " + sameNumber);
 
 
     }
