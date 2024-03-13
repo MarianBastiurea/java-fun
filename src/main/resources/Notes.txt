@@ -411,6 +411,12 @@ but it does come at a higher cost.
 If your number of elements is not large, or you want a collection that's sorted, and continuously re-sorted as you
 add and remove elements, and that shouldn't contain duplicate elements, the TreeSet is a good alternative to the ArrayList.
 
+HashMap
+
+A Java Map can't contain duplicate keys.
+Each key can only map to a single value.
+The HashMap is unordered, the LinkedHashMap is ordered by insertion order, and the TreeMap is a sorted map.
+
 
 
 
