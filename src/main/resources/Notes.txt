@@ -456,6 +456,7 @@ or implicitly by passing another EnumSet.
 In general, this map has better performance than using a HashMap, with an enum type.
 
 Two Types of EnumSet implementations
+
 Enum sets are represented internally as bit vectors, which is just a series of ones and zeros.
 A one indicates that the enum constant (with an ordinal value that is equal to the index of the bit) is in the set.
 A zero indicates the enum constant is not in the set.
@@ -463,6 +464,45 @@ Using a bit vector allows all set operations to use bit math, which makes it ver
 A RegularEnumSet uses a single long as its bit vector, which means it can contain a maximum of 64 bits, representing
 64 enum values.
 A JumboEnumSet gets returned if you have more than 64 enums.
+
+Mutable vs Immutable
+
+Objects have state, which is the data stored in instance fields.
+State can change after an object is created, either intentionally or unintentionally.
+When state remains constant throughout the lifetime of the object, and code is prevented from changing the state,
+this object is called an immutable object.
+An immutable object is an object whose internal state remains constant.
+A mutable object is an object whose internal state does not remain constant.
+An immutable object isn't subject to unwanted, unplanned and unintended modifications, known as side-effects.
+An immutable class is inherently thread-safe, because no threads at all can change it, once it's been constructed.
+This allows us to use more efficient collections and operations, which don't have to manage synchronization of access
+to this object.
+These are two of the most important advantages.
+An immutable object can’t be modified after it's been created.
+
+The final modifier in Java
+
+When we use the final modifier, we prevent any further modifications to thatcomponent.
+A final method means it can't be overridden by a subclass.
+A final field means an object's field can't be reassigned or given a different value, after its initialization.
+A final static field is a class field that can't be reassigned, or given a different value, after the class's
+initialization process. A field declared on an Interface is always public, static and final.
+A final class can't be overridden, meaning no class can use it, in the extends clause.
+A final variable, in a block of code, means that once it's assigned a value, any remaining code in the block
+can't change it.
+A final method parameter means, we can't assign a different value to that parameter in the method code block.
+When we use the final modifier, we prevent any further modifications to that component.
+A final method means it can't be overridden by a subclass.
+A final field means an object's field can't be reassigned or given a different value, after its initialization.
+A final static field is a class field that can't be reassigned, or given a different value, after the class's
+ initialization process. A field declared on an Interface is always public, static and final.
+A final variable, in a block of code, means that once it's assigned a value, any remaining code in the block can't change it.
+A final method parameter means, we can't assign a different value to that parameter in the method code block.
+You can use the final modifier on methods.
+Using final with methods only makes sense in the context of wanting to restrict what your subclasses can override or hide.
+Using final on an instance method means subclasses can't override it.
+Using final on a class (static) method means subclasses can't hide it.
+
 
 
 
