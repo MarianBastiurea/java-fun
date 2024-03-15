@@ -1,36 +1,26 @@
 package org.example.c13.Final;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class BankAccount {
-    private static int lastCustomerId = 10_000_000;
+    public enum AccountType {CHECKING, SAVINGS}
 
-    private final String name;
-    private final int customerId;
-    private final List<BankAccount> accounts = new ArrayList<>();
+    private final AccountType accountType;
+    private final double balance;
 
-    public BankCustomer(String name, double checkingAmount, double savingsAmount) {
-        this.name = name;
-        this.customerId = lastCustomerId++;
-        accounts.add(new BankAccount(BankAccount.AccountType.CHECKING, checkingAmount));
-        accounts.add(new BankAccount(BankAccount.AccountType.SAVINGS, savingsAmount));
+    public BankAccount(AccountType accountType, double balance) {
+        this.accountType = accountType;
+        this.balance = balance;
     }
 
-    public String getName() {
-        return name;
+    public AccountType getAccountType() {
+        return accountType;
     }
 
-    public List<BankAccount> getAccounts() {
-        return new ArrayList<>(accounts);
+    public double getBalance() {
+        return balance;
     }
 
     @Override
     public String toString() {
-
-        String[] accountStrings = new String[accounts.size()];
-        Arrays.setAll(accountStrings, i -> accounts.get(i).toString());
-        return "Customer: %s (id:%015d)%n\t%s%n".formatted(name, customerId,
-                String.join("\n\t", accountStrings));
+        return "%s $%.2f".formatted(accountType, balance);
     }
+}
