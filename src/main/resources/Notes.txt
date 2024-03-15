@@ -342,7 +342,7 @@ Remember, the interface let's us describe objects by what they can do, rather th
 they're ultimately constructed.
 
 A QUEUE is a collection designed for holding elements prior to processing, in other words the processing order matters,
- so the first and last positions, or the head and tail, are prioritized.
+so the first and last positions, or the head and tail, are prioritized.
 
 A SET is a collection conceptually based off of a mathematical set.
 
@@ -366,7 +366,7 @@ Hashed implementations use a combination of the hash code and other means, to pr
 system, to achieve this desired uniform distribution of the objects.
 Objects can be considered equal in other instances as well, if their attribute values are equal, for example.
 The String class overrides this method, so that it compares all the characters in each String, to confirm that
- two Strings are equal.
+two Strings are equal.
 Objects that are considered equal should produce the same hashCode.
 
 The Set
@@ -378,7 +378,7 @@ The set interface defines the basic methods add, remove and clear, to maintain t
 We can also check if a specific item is in the set using the contains method.
 Interestingly enough, there's no way to retrieve an item from a set.
 You can check if something exists, using contains, and you can iterate over all the elements in the set, but attempting
- to get the 10th element, for example, from a set isn't possible, with a single method.
+to get the 10th element, for example, from a set isn't possible, with a single method.
 
 The HashSet class
 
@@ -421,15 +421,101 @@ The HashMap is unordered, the LinkedHashMap is ordered by insertion order, and t
 View
 
 The view, or view collection as Java calls it, doesn't store elements, but depends on a backing collection that stores
- the data elements.
- We know a map has keys, and these can't contain duplicates.
- Each key value pair is stored as an instance of an Entry, and the combination of the key and value will be unique,
- because the key is unique.
+the data elements.
+We know a map has keys, and these can't contain duplicates.
+Each key value pair is stored as an instance of an Entry, and the combination of the key and value will be unique,
+because the key is unique.
 A Set view of these entries, or nodes in the case of the HashMap, can be retrieved from the method entrySet.
 You can use the methods remove, removeAll, retainAll, and clear.
 It does not support the add or addAll operations.
 
+The Map interface has the LinkedHashMap and TreeMap classes.
+The LinkedHashMap is a key value entry collection, whose keys are ordered by insertion order.
+The TreeMap is sorted by it's keys, so a key needs to implement Comparable, or be initialized,
+with a specified Comparator.
 
+
+EnumSet and EnumMap
+
+You can use any List, Set, or Map, with an enum constant.
+The EnumSet, and EnumMap, each has a special implementation that differs from the HashSet or HashMap.
+These implementations make these two types extremely compact and efficient.
+There's no special list implementation for enum types
+The EnumSet is a specialized Set implementation for use with enum values.
+All of the elements in an EnumSet must come from a single enum type.
+The EnumSet is abstract, meaning we can't instantiate it directly.
+It comes with many factory methods to create instances.
+In general, this set has much better performance than using a HashSet, with an enum type.
+Bulk operations (such as containsAll and retainAll) should run very quickly, in constant time, O(1), if they're run
+on an enumSet, and their argument is an EnumSet.
+The Enum Map is a specialized Map implementation for use with enum type keys.
+The keys must all come from the same enum type, and they're ordered naturally by the ordinal value of the enum constants.
+This map has the same functionality as a HashMap, with O(1) for basic operations.
+The enum key type is specified during construction of the EnumMap, either explicitly by passing the key type's class,
+or implicitly by passing another EnumSet.
+In general, this map has better performance than using a HashMap, with an enum type.
+
+Two Types of EnumSet implementations
+
+Enum sets are represented internally as bit vectors, which is just a series of ones and zeros.
+A one indicates that the enum constant (with an ordinal value that is equal to the index of the bit) is in the set.
+A zero indicates the enum constant is not in the set.
+Using a bit vector allows all set operations to use bit math, which makes it very fast.
+A RegularEnumSet uses a single long as its bit vector, which means it can contain a maximum of 64 bits, representing
+64 enum values.
+A JumboEnumSet gets returned if you have more than 64 enums.
+
+Mutable vs Immutable
+
+Objects have state, which is the data stored in instance fields.
+State can change after an object is created, either intentionally or unintentionally.
+When state remains constant throughout the lifetime of the object, and code is prevented from changing the state,
+this object is called an immutable object.
+An immutable object is an object whose internal state remains constant.
+A mutable object is an object whose internal state does not remain constant.
+An immutable object isn't subject to unwanted, unplanned and unintended modifications, known as side-effects.
+An immutable class is inherently thread-safe, because no threads at all can change it, once it's been constructed.
+This allows us to use more efficient collections and operations, which don't have to manage synchronization of access
+to this object.
+These are two of the most important advantages.
+An immutable object can’t be modified after it's been created.
+
+The final modifier in Java
+
+When we use the final modifier, we prevent any further modifications to thatcomponent.
+A final method means it can't be overridden by a subclass.
+A final field means an object's field can't be reassigned or given a different value, after its initialization.
+A final static field is a class field that can't be reassigned, or given a different value, after the class's
+initialization process. A field declared on an Interface is always public, static and final.
+A final class can't be overridden, meaning no class can use it, in the extends clause.
+A final variable, in a block of code, means that once it's assigned a value, any remaining code in the block
+can't change it.
+A final method parameter means, we can't assign a different value to that parameter in the method code block.
+When we use the final modifier, we prevent any further modifications to that component.
+A final method means it can't be overridden by a subclass.
+A final field means an object's field can't be reassigned or given a different value, after its initialization.
+A final static field is a class field that can't be reassigned, or given a different value, after the class's
+ initialization process. A field declared on an Interface is always public, static and final.
+A final variable, in a block of code, means that once it's assigned a value, any remaining code in the block can't change it.
+A final method parameter means, we can't assign a different value to that parameter in the method code block.
+You can use the final modifier on methods.
+Using final with methods only makes sense in the context of wanting to restrict what your subclasses can override or hide.
+Using final on an instance method means subclasses can't override it.
+Using final on a class (static) method means subclasses can't hide it.
+
+Immutable Object
+
+An immutable object doesn't change state, once it's created.
+An immutable object is a secure object, meaning calling code can't maliciously or mistakenly alter it.
+An immutable object simplifies concurrency design.
+
+Strategies for Declaring a Class, to produce immutable objects
+This slide describes the strategies of creating a class, that when used, produces immutable objects.
+Make instance fields private and final.
+Do not define any setter methods.
+Create defensive copies in any getters.
+Use a constructor or factory method to set data, making copies of mutable reference data.
+Mark the class final, or make all constructors private.
 
 
 
