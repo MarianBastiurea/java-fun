@@ -517,6 +517,14 @@ Create defensive copies in any getters.
 Use a constructor or factory method to set data, making copies of mutable reference data.
 Mark the class final, or make all constructors private.
 
+Unmodifiable Collections are NOT immutable collections
+
+They become immutable collections, if the elements in the collections themselves are fully immutable.
+They are collections with limited functionality that can help us minimize mutability.
+You can't remove, add or clear elements from an immutable collection.
+You also can't replace or sort elements.
+Mutator methods will throw an UnsupportedOperationException.
+You can't create this type of collection with nulls.
 
 
 
