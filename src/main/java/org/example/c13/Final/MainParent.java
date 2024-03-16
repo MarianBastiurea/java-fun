@@ -13,5 +13,6 @@ public class MainParent {
 
         Person1 joeCopy = new Person1(joe);
         System.out.println(joeCopy);
+        Generation g = Generation.BABY_BOOMER;
     }
 }
