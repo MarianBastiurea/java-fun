@@ -553,6 +553,16 @@ This is javap.
 It lists class members, by default just public and protected members in the class file.
 This helps us 'see' implicit code in the compiled class file.
 
+Final Classes
+Using the final keyword on a class means it can't be extended.
+You declare a class final if its definition is complete, and no subclasses are desired or required.
+Enums and Records are final classes.
+Subclasses can take advantage of mutable fields on parent classes, if the parent classes aren't implementing
+defensive code.
+One of the easiest ways to prevent this, is to make your class final.
+The final and abstract modifiers are incompatible and wouldn't be used in the same declaration.
+You can see that if you don't want your class to be instantiated, you can either make it abstract or use a more
+ restrictive access modifier on the class.
 
 
 
