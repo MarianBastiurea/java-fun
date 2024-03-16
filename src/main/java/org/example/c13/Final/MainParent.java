@@ -8,5 +8,10 @@ public class MainParent {
 
         System.out.println("Parent: " + parent);
         System.out.println("Child: " + child);
+        Person1 joe = new Person1("Joe", "01-01-1950");
+        System.out.println(joe);
+
+        Person1 joeCopy = new Person1(joe);
+        System.out.println(joeCopy);
     }
 }
