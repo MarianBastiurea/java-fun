@@ -564,6 +564,30 @@ The final and abstract modifiers are incompatible and wouldn't be used in the sa
 You can see that if you don't want your class to be instantiated, you can either make it abstract or use a more
  restrictive access modifier on the class.
 
+ Sealed Classes
+This modifier can be used for both outer types and nested types.
+When used, a permits clause is also required in most cases, which lists the allowed subclasses.
+Subclasses can be nested classes, classes declared in the same file, classes in the same package, or if using Java's
+modules, in the same module.
+What this means though, for this specific conversation, is that all our code so far, since JDK9, is part of what's
+called, the unnamed default module.
+Because of this, I can't use subclasses in the permits clause that are in other packages.
+A sealed class and its direct subclasses create a circular reference.
+Using the sealed keyword, requires the parent class to declare it's subclasses, using a permits clause.
+This means the parent class has to know about every direct subclass, and these have to exist, in the same package
+in this case.
+In addition, the sealed keyword puts a requirement on all the subclasses that were declared in the permits clause.
+It requires each subclass to declare one of the three valid modifiers for a class extending a sealed class.
+These are final, sealed or non-sealed.
+All subclasses declared in the permits clause, must be declared as final, sealed or non-sealed.
+Declaring a class final, means no other subclasses can extend that class, as I show with class A, on this slide.
+A subclass declared with a sealed modifier, shown here with class B, must in turn use a permits clause.
+Its subclasses in turn, have to use one of the three valid modifiers.
+Lastly, a subclass can use the non-sealed modifier, as shown with class C.
+This means it's basically unsealing itself for all it's subclasses.
+
+
+
 
 
 
