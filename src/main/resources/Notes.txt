@@ -526,6 +526,39 @@ You also can't replace or sort elements.
 Mutator methods will throw an UnsupportedOperationException.
 You can't create this type of collection with nulls.
 
+Stream
+
+A sequence of elements supporting sequential and parallel aggregate operations.
+Streams are a mechanism for describing a whole series of processes, before actually executing them.
+The stream and the collection types were designed for different purposes.
+A collection is used to store and manage a series of elements in Java, providing direct access to the Collection elements.
+You can use collections to manipulate or query a set of data.
+There's nothing you can do with a stream, that you couldn't already do with a Collection.
+However, a stream was designed to manage the processing of elements.
+Streams don’t actually store elements, instead these elements are computed on demand, from a data providing source.
+When you call many of the methods on a stream, execution may not immediately occur.
+Instead, you'll need to invoke a special operation on the stream, like you would by calling a lambda's functional method.
+This special operation is called a terminal operation.
+Streams are an exciting addition to Java, because they provide several benefits.
+First, they make the code to process data uniform, concise and repeatable, in ways that feel similar to a database's
+structured query language (SQL).
+Second, when working with large collections, parallel streams will provide a performance advantage.
+All of the code samples I've provided up to this point, using collections, will continue to be valuable for many use cases.
+It's time to talk about this new way of doing things, using this additional functional programming feature.
+This entire chain of operations is what's called a Stream Pipeline.
+The source of the stream is where the data elements are coming from.
+In our example, it's coming from a list, bingoPool.
+All pipelines start with a stream, so in this example, we need to call the stream method on the bingoPool
+list to get a stream.
+There are a lot of other kinds of sources, and ways to create new streams, including infinite streams
+Stream Pipelines end in a terminal operation.
+A terminal operation is required.
+Everything else, between the source and the terminal operation is an intermediate operation
+An intermediate operation is not required.
+You can have a pipeline that just has a source and terminal operation, and these are quite common.
+Every intermediate operation processes elements on the stream, and returns a stream as a result.
+You can't reuse a stream.
+Stream Types May Change As the Pipeline Process Progresses
 
 
 
