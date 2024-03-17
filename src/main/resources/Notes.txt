@@ -517,6 +517,76 @@ Create defensive copies in any getters.
 Use a constructor or factory method to set data, making copies of mutable reference data.
 Mark the class final, or make all constructors private.
 
+
+The instance initializer block
+An instance initializer is a block of code declared directly in a class body.
+This code gets executed when an instance of the class is created.
+Instance initializers are executed, before any code in class constructors is executed.
+You can have multiple initializer blocks.
+They will be executed in the order they are declared.
+
+Static Initializers
+A static initializer is called the first time a class is referenced or constructed.
+A class can have any number of static initialization blocks.
+They can be declared anywhere in the class body.
+They're called in the order they appear in the source code.
+You might use this to set up some environment data or log information, that's related to the class before it can be used.
+Remember, this will get executed only during the class's construction and not each instance's construction.
+
+Record Constructors come in three flavors
+
+The Canonical, or Long constructor is the implicitly generated constructor.  You can explicitly declare your own, which
+means the implicit one won't get generated.  If you do declare your own, you must make sure fields all get assigned
+a value.
+The Custom constructor is just an overloaded constructor.  It must explicitly call the canonical constructor as
+it's first statement.
+The Compact, or Short constructor is a special kind of constructor, used only on records.   It's a succinct way of
+explicitly declaring a canonical constructor.
+The compact constructor:
+You can't have both a compact constructor and an explicit canonical constructor.
+This constructor is declared with no parentheses, so no arguments.
+It has access to all the arguments of the canonical constructor. Don't confuse the arguments with the instance fields!
+You can't do assignments to the instance fields in this constructor.
+The implicit canonical constructor's assignments occur after the execution of this code.
+
+The Java Class File Disassembler:
+This is javap.
+It lists class members, by default just public and protected members in the class file.
+This helps us 'see' implicit code in the compiled class file.
+
+Final Classes
+Using the final keyword on a class means it can't be extended.
+You declare a class final if its definition is complete, and no subclasses are desired or required.
+Enums and Records are final classes.
+Subclasses can take advantage of mutable fields on parent classes, if the parent classes aren't implementing
+defensive code.
+One of the easiest ways to prevent this, is to make your class final.
+The final and abstract modifiers are incompatible and wouldn't be used in the same declaration.
+You can see that if you don't want your class to be instantiated, you can either make it abstract or use a more
+ restrictive access modifier on the class.
+
+ Sealed Classes
+This modifier can be used for both outer types and nested types.
+When used, a permits clause is also required in most cases, which lists the allowed subclasses.
+Subclasses can be nested classes, classes declared in the same file, classes in the same package, or if using Java's
+modules, in the same module.
+What this means though, for this specific conversation, is that all our code so far, since JDK9, is part of what's
+called, the unnamed default module.
+Because of this, I can't use subclasses in the permits clause that are in other packages.
+A sealed class and its direct subclasses create a circular reference.
+Using the sealed keyword, requires the parent class to declare it's subclasses, using a permits clause.
+This means the parent class has to know about every direct subclass, and these have to exist, in the same package
+in this case.
+In addition, the sealed keyword puts a requirement on all the subclasses that were declared in the permits clause.
+It requires each subclass to declare one of the three valid modifiers for a class extending a sealed class.
+These are final, sealed or non-sealed.
+All subclasses declared in the permits clause, must be declared as final, sealed or non-sealed.
+Declaring a class final, means no other subclasses can extend that class, as I show with class A, on this slide.
+A subclass declared with a sealed modifier, shown here with class B, must in turn use a permits clause.
+Its subclasses in turn, have to use one of the three valid modifiers.
+Lastly, a subclass can use the non-sealed modifier, as shown with class C.
+This means it's basically unsealing itself for all it's subclasses.
+
 Unmodifiable Collections are NOT immutable collections
 
 They become immutable collections, if the elements in the collections themselves are fully immutable.
@@ -525,6 +595,7 @@ You can't remove, add or clear elements from an immutable collection.
 You also can't replace or sort elements.
 Mutator methods will throw an UnsupportedOperationException.
 You can't create this type of collection with nulls.
+
 
 
 
