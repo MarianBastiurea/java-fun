@@ -84,9 +84,5 @@ public class StreamExercise {
         System.out.println("Second smallest number in array is: " + secondSmallest);
 
 
-
-
-
-
     }
 }
