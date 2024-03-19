@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
 public class StreamExercise {
     public static void main(String[] args) {
         //Write a Java program to implement a lambda expression to filter out even and odd numbers from a list of integers.`
@@ -83,6 +84,48 @@ public class StreamExercise {
         System.out.println("Second largest number in array is: " + secondLargest);
         System.out.println("Second smallest number in array is: " + secondSmallest);
 
+
+        //Write a Java program to calculate the average of a list of integers using streams.
+        Integer sum = Arrays.stream(number)
+                .reduce(0, Integer::sum);
+        double average = sum / number.length;
+        System.out.println("Sum of elements from array: " + sum);
+        System.out.println("Average of array's element: " + average);
+
+        //Write a Java program to convert a list of strings to uppercase using streams.
+        List<String> toUppercase = colors.stream()
+                .map(String::toUpperCase)
+                .toList();
+        System.out.println("Colors in uppercase: " + toUppercase);
+
+        //Write a Java program to remove all duplicate elements from a list using streams.
+        List<String> colorsWithDuplicate = Arrays.asList("red", "yellow", "green", "violet", "indigo", "black",
+                "white", "blue", "orange", "red", "yellow", "green", "violet", "indigo", "black");
+        List<String> colorsWithoutDuplicate = colorsWithDuplicate.stream()
+                .distinct()
+                .toList();
+        System.out.println("Colors list with duplicate: " + colorsWithDuplicate);
+        System.out.println("Colors list without duplicate: " + colorsWithoutDuplicate);
+
+        //Write a Java program to count the number of strings in a list that start with a specific letter using streams.
+        List<String> words = Arrays.asList("red", "yellow", "green", "violet", "indigo", "row", "white",
+                "blue", "orange", "rumble", "black");
+        char startingLetter = 'r';
+        long count = words.stream()
+                .filter(s -> s.startsWith(String.valueOf(startingLetter)))
+                .count();
+        System.out.println("number of words starting with r:" + count);
+
+        //Write a Java program to sort a list of strings in alphabetical order, ascending and descending using streams.
+        List<String> wordsInAscendingOrder = words.stream()
+                .sorted()
+                .toList();
+        System.out.println("words list sorted in ascending order" + wordsInAscendingOrder);
+
+        List<String> wordsInDescendingOrder = words.stream()
+                .sorted(Comparator.reverseOrder())
+                .toList();
+        System.out.println("words list in reverse order " + wordsInDescendingOrder);
 
     }
 }
