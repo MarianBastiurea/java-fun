@@ -93,7 +93,7 @@ public class StreamExercise {
         System.out.println("Average of array's element: " + average);
 
         //Write a Java program to convert a list of strings to uppercase using streams.
-        List<String> toUppercase = colors.stream()
+       List<String> toUppercase = colors.stream()
                 .map(String::toUpperCase)
                 .toList();
         System.out.println("Colors in uppercase: " + toUppercase);
