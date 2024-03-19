@@ -629,6 +629,29 @@ You can have a pipeline that just has a source and terminal operation, and these
 Every intermediate operation processes elements on the stream, and returns a stream as a result.
 You can't reuse a stream.
 Stream Types May Change As the Pipeline Process Progresses
+Terminal Operation on Stream:
+Now it's time to see why stream processes are such a welcome feature, as I show you other terminal operations we can use.
+Some are designed to find matches, most of which are targets for a Predicate lambda expression.
+Some are designed to transform stream data into a collection, or some other reference type.
+Others aggregate information, to count elements, or find a minimum or maximum value, and don't take arguments.
+A reduction operation is a special type of terminal operation.
+Stream elements are processed, to produce a single output.
+The result can be a primitive type, like a long, in the case of the count operation.
+The result can be a reference type, like Optional or one of the Statistics types I'll be covering shortly.
+It can also be any type of your choice, such as an array, a list, or some other type.
+The primitive streams have average and sum as well, and a summaryStatistics operation which gives you count, min, max,
+average and sum in one result.
+A reduction operation is a special type of terminal operation.
+Stream elements are processed, to produce a single output.
+The result can be a primitive type, like a long, in the case of the count operation.
+The result can be a reference type, like Optional or one of the Statistics types I'll be covering shortly.
+It can also be any type of your choice, such as an array, a list, or some other type.
+I can use terminal operations to return information about the aggregated data set.
+There are three terminal operations that let you get an overall sense, of what your stream elements contain, based on
+some specified condition.
+These all return a boolean, and take a Predicate as an argument.
+You can think of these as ways to ask true or false questions about the data set, the stream, as a whole.
+
 
 
 
