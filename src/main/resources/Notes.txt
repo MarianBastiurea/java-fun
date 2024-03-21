@@ -652,6 +652,15 @@ some specified condition.
 These all return a boolean, and take a Predicate as an argument.
 You can think of these as ways to ask true or false questions about the data set, the stream, as a whole.
 
+BigDecimal
+
+The BigDecimal class stores a floating point number in two integer fields.
+The first field holds an unscaled value, with a type of BigInteger, another class in the java.math package,
+that can store numbers bigger than even long values.
+The second field is the scale, which can be positive, 0 or negative.
+A positive or 0 scale defines how many digits in the unscaled value, are after the decimal point.
+You can use a negative scale as well, which means the unscaled value is multiplied by ten to the power of the
+negation of the scale.
 
 
 
