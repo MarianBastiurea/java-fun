@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:src/main/java/org/example/c03inheritance/Book.java
 package org.example.c03inheritance;
 
 public class Book {
@@ -55,3 +56,6 @@ public class Book {
 
 
 
+=======
+package org.example.c04.inheritance;
+>>>>>>> Stashed changes:src/main/java/org/example/c04/inheritance/Book.java
