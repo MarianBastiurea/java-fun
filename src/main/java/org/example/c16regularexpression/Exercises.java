@@ -100,6 +100,6 @@ public class Exercises {
             System.out.println(s+" have 8 at the end of string? ->"+s.matches(".*8$"));
         }
         System.out.println("_".repeat(30));
-        
+
     }
 }
