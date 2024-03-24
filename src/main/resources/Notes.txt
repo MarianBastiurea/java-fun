@@ -722,6 +722,18 @@ You can use the ? to be a quantifier modifier, making the regular expression rel
 
 
 
+Input/Output
+
+Checked Exception
+A Checked Exception must be caught, or specified in the containing method's throws clause
+How do you handle a checked exception?
+You have two options.
+You can wrap the statement that throws a checked exception, in a try catch block, and then handle the situation in the catch block.
+Or, alternately, you can change the method signature, declaring a throws clause, and specifying this exception type.
+LBYL stands for, "Look Before You Leap".  This style of coding involves checking for errors, before you perform
+an operation.
+EAFP stands for, "Easier to Ask Forgiveness than Permission".  This assumes an operation will usually succeed,
+and then handles any errors that occur, if they do occur.
 
 
 
