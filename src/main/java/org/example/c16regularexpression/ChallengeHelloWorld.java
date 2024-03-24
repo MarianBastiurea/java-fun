@@ -32,7 +32,10 @@ public class ChallengeHelloWorld {
         String sentence = "Hello, World!";
         boolean matches = sentence.matches("Hello, World!");
         System.out.println(matches);
+        System.out.println("_".repeat(30));
 
+        //Create a regular expression that matches a sentence starting with an uppercase letter, followed by
+        // zero or more lowercase letters, and ending with a period.
         String challenge2 = "[A-Z].*//.";
         for (String s : List.of("The bike is red.",
                 "I am a new student.",
@@ -41,7 +44,10 @@ public class ChallengeHelloWorld {
             boolean matched = s.matches(challenge2);
             System.out.println(matched + ": " + s);
         }
+        System.out.println("_".repeat(30));
 
+        //The sentence should start with a word beginning with a capital letter, followed by one or more words
+        // separated by spaces, and end with either an exclamation mark, question mark, or period.
         String challenge3 = "^[A-Z][\\p{all}]+[.?!]";
         for (String s : List.of("The bike is red, and has a flat tires.",
                 "I love being a new L.P.A. student!",
