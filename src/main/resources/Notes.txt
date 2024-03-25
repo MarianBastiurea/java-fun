@@ -735,6 +735,17 @@ an operation.
 EAFP stands for, "Easier to Ask Forgiveness than Permission".  This assumes an operation will usually succeed,
 and then handles any errors that occur, if they do occur.
 
+NIO2 file operations:
+The NIO2 types include support for:
+Asynchronous file I/O operations.
+File locking, including more granular locking.  This means, instead of locking the entire file, a region of it can be locked.
+File metadata retrieval.
+Symbolic link manipulation.
+File system notifications. This means changes occurring on a path, can be made watchable to registered services.
+NIO2 types are non-blocking, meaning asynchronous access to resources, by multiple threads, is supported.
+They manage memory more efficiently, reading and writing files directly to and from memory into buffers, through something called a FileChannel.
+You can also read from or write to multiple buffers in a single operation.
+
 
 
 
