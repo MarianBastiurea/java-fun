@@ -23,11 +23,11 @@ public class ReadingAFileWithNIO2 {
             System.out.println("----------------");
             System.out.println(Files.readString(path));
 
-            Pattern p = Pattern.compile("(.{15})(.{3})(.{12})(.{8})(.{2}).*");
+            Pattern giveDimensionForColumn = Pattern.compile("(.{15})(.{3})(.{12})(.{8})(.{2}).*");
             Set<String> values = new TreeSet<>();
             Files.readAllLines(path).forEach(s -> {
                 if (!s.startsWith("Name")) {
-                    Matcher m = p.matcher(s);
+                    Matcher m = giveDimensionForColumn.matcher(s);
                     if (m.matches()) {
                         values.add(m.group(3).trim());
                     }
@@ -38,7 +38,7 @@ public class ReadingAFileWithNIO2 {
             try (var stringStream = Files.lines(path)) {
                 var results = stringStream
                         .skip(1)
-                        .map(p::matcher)
+                        .map(giveDimensionForColumn::matcher)
                         .filter(Matcher::matches)
                         .map(m -> m.group(3).trim())
                         .distinct()
@@ -50,7 +50,7 @@ public class ReadingAFileWithNIO2 {
             try (var stringStream = Files.lines(path)) {
                 var results = stringStream
                         .skip(1)
-                        .map(p::matcher)
+                        .map(giveDimensionForColumn::matcher)
                         .filter(Matcher::matches)
                         .collect(Collectors.groupingBy(m -> m.group(3).trim(),
                                 Collectors.counting()));
