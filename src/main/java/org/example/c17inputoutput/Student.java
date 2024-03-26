@@ -2,6 +2,7 @@ package org.example.c17inputoutput;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Student {
     private static long lastStudentId = 1;
@@ -44,9 +45,11 @@ public class Student {
     public int getEnrollmentAge() {
         return demographics.ageAtEnrollment();
     }
+
     public String getGender() {
         return demographics.gender();
     }
+
     public int getEnrollmentYear() {
         return demographics.enrolledYear();
     }
@@ -54,6 +57,7 @@ public class Student {
     public int getEnrollmentMonth() {
         return demographics.enrolledMonth();
     }
+
     public String getCountry() {
         return demographics.countryCode();
     }
@@ -73,7 +77,7 @@ public class Student {
         int inactiveMonths = 300;  // 25 years
         for (String key : engagementMap.keySet()) {
             int mos = getInactiveMonths(key);
-            if  (mos < inactiveMonths) {
+            if (mos < inactiveMonths) {
                 inactiveMonths = mos;
             }
         }
@@ -119,6 +123,24 @@ public class Student {
                 studentId, demographics, coursesEnrolled, engagementData);
     }
 
+    public String toJSON() {
+
+        StringJoiner courses = new StringJoiner(",", "[", "]");
+        for (Course c : coursesEnrolled) {
+            courses.add(c.toJSON());
+        }
+        String engagement = engagementMap.values().stream()
+                .map(CourseEngagement::toJSON)
+                .collect(Collectors.joining(",", "[", "]"));
+
+        return new StringJoiner(", ", "{", "}")
+                .add("\"studentId\":" + studentId)
+                .add("\"demographics\":" + demographics.toJSON())
+                .add("\"coursesEnrolled\":" + courses)
+                .add("\"engagementMap\":" + engagement)
+                .toString();
+    }
+
     public List<String> getEngagementRecords() {
 
         int i = 0;
@@ -135,7 +157,7 @@ public class Student {
     public static Student getRandomStudent(Course... courses) {
 
         Random random = new Random();
-        String countryCode = List.of("AU", "CN", "GB", "IN","US")
+        String countryCode = List.of("AU", "CN", "GB", "IN", "US")
                 .get(random.nextInt(5));
         String gender = List.of("M", "F", "U").get(random.nextInt(3));
 
@@ -158,4 +180,6 @@ public class Student {
 
         return student;
     }
+
+
 }
