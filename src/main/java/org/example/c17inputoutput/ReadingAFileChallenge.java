@@ -18,7 +18,7 @@ public class ReadingAFileChallenge {
 
 //            System.out.printf(" %,d lines in file%n", br.lines().count());
 
-            Pattern splitToWords = Pattern.compile("\\p{javaWhitespace}+");
+            Pattern oneOrManyWhitespaces = Pattern.compile("\\p{javaWhitespace}+");
 //            System.out.printf("%,d words in file%n",
 //                    br.lines()
 ////                            .flatMap(splitToWords::splitAsStream)
@@ -38,7 +38,7 @@ public class ReadingAFileChallenge {
                     "service",
                     "original");
             var result = br.lines()
-                    .flatMap(splitToWords::splitAsStream)
+                    .flatMap(oneOrManyWhitespaces::splitAsStream)
                     .map(w -> w.replaceAll("\\p{Punct}", ""))
                     .filter(w -> w.length() > 4)
                     .map(String::toLowerCase)
@@ -61,8 +61,8 @@ public class ReadingAFileChallenge {
             input = Files.readString(Path.of("testfile.txt"));
             input = input.replaceAll("\\p{Punct}", "");
 
-            Pattern splitInWordsWithMoreThan5Char = Pattern.compile("\\w{5,}");
-            Matcher matcher = splitInWordsWithMoreThan5Char.matcher(input);
+            Pattern moreThan5Char = Pattern.compile("\\w{5,}");
+            Matcher matcher = moreThan5Char.matcher(input);
             Map<String, Long> results = new HashMap<>();
             while (matcher.find()) {
                 String word = matcher.group().toLowerCase();
