@@ -18,16 +18,16 @@ public class ReadingAFileChallenge {
 
 //            System.out.printf(" %,d lines in file%n", br.lines().count());
 
-            Pattern pattern = Pattern.compile("\\p{javaWhitespace}+");
+            Pattern splitToWords = Pattern.compile("\\p{javaWhitespace}+");
 //            System.out.printf("%,d words in file%n",
 //                    br.lines()
-////                            .flatMap(pattern::splitAsStream)
-//                            .flatMap(l -> Arrays.stream(l.split(pattern.toString())))
+////                            .flatMap(splitToWords::splitAsStream)
+//                            .flatMap(l -> Arrays.stream(l.split(splitToWords.toString())))
 //                            .count());
 
 //            System.out.printf("%,d words in file%n",
 //                    br.lines()
-//                            .mapToLong(l -> l.split(pattern.toString()).length)
+//                            .mapToLong(l -> l.split(splitToWords.toString()).length)
 //                            .sum());
 
             List<String> excluded = List.of(
@@ -38,7 +38,7 @@ public class ReadingAFileChallenge {
                     "service",
                     "original");
             var result = br.lines()
-                    .flatMap(pattern::splitAsStream)
+                    .flatMap(splitToWords::splitAsStream)
                     .map(w -> w.replaceAll("\\p{Punct}", ""))
                     .filter(w -> w.length() > 4)
                     .map(String::toLowerCase)
@@ -61,8 +61,8 @@ public class ReadingAFileChallenge {
             input = Files.readString(Path.of("testfile.txt"));
             input = input.replaceAll("\\p{Punct}", "");
 
-            Pattern pattern = Pattern.compile("\\w{5,}");
-            Matcher matcher = pattern.matcher(input);
+            Pattern splitInWordsWithMoreThan5Char = Pattern.compile("\\w{5,}");
+            Matcher matcher = splitInWordsWithMoreThan5Char.matcher(input);
             Map<String, Long> results = new HashMap<>();
             while (matcher.find()) {
                 String word = matcher.group().toLowerCase();
