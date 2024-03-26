@@ -1,0 +1,5 @@
+Directory Contents: 
+/Users/marianbastiurea/Documents/GitHub/java-fun/public/assets/icons
+/Users/marianbastiurea/Documents/GitHub/java-fun/public/assets/icons/indexCopy.txt
+/Users/marianbastiurea/Documents/GitHub/java-fun/public/assets/icons/index.txt
+Generated: 2024-03-26T14:34:12.311718
