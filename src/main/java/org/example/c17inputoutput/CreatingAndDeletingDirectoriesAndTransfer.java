@@ -12,6 +12,8 @@ import java.nio.file.StandardCopyOption;
 public class CreatingAndDeletingDirectoriesAndTransfer {
     public static void main(String[] args) {
 
+//
+//        shallow copy->copy directory without content
 //        File oldFile = new File("students.json");
 //        File newFile = new File("student-activity.json");
 //        if (oldFile.exists()) {
@@ -21,6 +23,7 @@ public class CreatingAndDeletingDirectoriesAndTransfer {
 //            System.out.println("File does not exist!");
 //        }
 
+        //deep copy--> copy directory with it's content
 //        Path oldPath = Path.of("students.json");
 //        Path newPath = Path.of("files/student-activity.json");
 //
