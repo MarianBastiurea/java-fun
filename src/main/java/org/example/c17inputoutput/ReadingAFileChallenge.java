@@ -61,8 +61,8 @@ public class ReadingAFileChallenge {
             input = Files.readString(Path.of("testfile.txt"));
             input = input.replaceAll("\\p{Punct}", "");
 
-            Pattern moreThan5Char = Pattern.compile("\\w{5,}");
-            Matcher matcher = moreThan5Char.matcher(input);
+            Pattern wordMoreThan5Char = Pattern.compile("\\w{5,}");
+            Matcher matcher = wordMoreThan5Char.matcher(input);
             Map<String, Long> results = new HashMap<>();
             while (matcher.find()) {
                 String word = matcher.group().toLowerCase();
