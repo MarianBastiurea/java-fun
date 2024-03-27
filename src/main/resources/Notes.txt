@@ -735,18 +735,78 @@ an operation.
 EAFP stands for, "Easier to Ask Forgiveness than Permission".  This assumes an operation will usually succeed,
 and then handles any errors that occur, if they do occur.
 
+Legacy (io)
+The File class and the FileReader class have been part of Java, since version 1.
+The FileReader class implements the AutoCloseable interface, through it's parent class, Reader.
+This class opens a file resource implicitly.
+In contrast, when you create an instance of a File, you aren't actually opening that file.
+Instead, you're working with something called a file handler, that lets you perform OS-like operations.
+A file handle is a reference to a file that is used by the operating system to keep track of the file.
+It is an abstract representation of the file, and it does not contain any of the actual data from the file.
+A file resource, on the other hand, is the actual data from the file.
+It is stored on the disk, and it can be accessed by the operating system, and by applications.
+
+
 NIO2 file operations:
 The NIO2 types include support for:
 Asynchronous file I/O operations.
-File locking, including more granular locking.  This means, instead of locking the entire file, a region of it can be locked.
+File locking, including more granular locking.  This means, instead of locking the entire file, a region of it
+ can be locked.
 File metadata retrieval.
 Symbolic link manipulation.
 File system notifications. This means changes occurring on a path, can be made watchable to registered services.
 NIO2 types are non-blocking, meaning asynchronous access to resources, by multiple threads, is supported.
-They manage memory more efficiently, reading and writing files directly to and from memory into buffers, through something called a FileChannel.
+They manage memory more efficiently, reading and writing files directly to and from memory into buffers, through
+something called a FileChannel.
 You can also read from or write to multiple buffers in a single operation.
 
+For writing files, there's temporary storage, that gets filled up as writes are executed, on a Writer class.
+Physical writes to disk happen when the buffer is flushed.
+This is the process of taking the text stored in the buffer, and writing it to the output file, and clearing the
+buffer's cache.
+The frequency of flushing can be affected by a number of factors, including the size of the buffer, the speed of
+ the disk, and the amount of data that's being written to the file.
 
+When you open a RandomAccessFile, it's file pointer is at 0, or the start of the file.
+
+Serialization
+The process of translating a data structure or object, into a format that can be stored on a file, is called
+serialization.
+Only instances of Serializable classes can be serialized, meaning the class must implement the Serializable interface.
+This interface doesn't have any methods, it's just used to mark the class as serializable.
+All subtypes of a serializable class are themselves also serializable.
+The default serialization mechanism, writes the class of the object, the class signature, and the values of non-static
+fields.
+These elements are used to restore the object, and it's state, during the read operation.
+This process is called reconstituting the data, or deserialization.
+
+serialVersionUID
+The serialVersionUID field is a runtime field, that the compiler will implicitly create, if it's not explicitly
+ declared, for classes that are serializable.
+It's based on class details such as the number of fields, their types, and declarations.
+When we read an object from a stream, the runtime checks the stored serialVersionUID.
+If they don't match, then there's a compatibility problem and the runtime will throw this invalid class exception.
+
+What constitutes an Incompatible Change?
+Changing the declared type of a primitive field.
+Deleting fields.
+Changing a non-static field to static, or a non-transient field to transient.
+There are other more complicated changes, such as moving a class within its hierarchy, changing the writeObject
+and readObject methods after you've used them to serialize previously, and a few others.
+
+What constitutes a Compatible Change?
+The good news is that not all changes you make to your class are going to invalidate the serialization process.
+Some changes are compatible changes:
+Adding fields.
+Adding writeObject and readObject methods.
+Changing the access to a field.
+Changing a field from static to nonstatic, or transient.
+For the full documentation on compatible changes, you can visit the link shown here.
+
+The transient modifier
+The transient modifier is used to indicate that a field should not be serialized.
+This can be useful for variables that contain sensitive information, or just variables that don't need to be
+persisted, for other reasons.
 
 
 
