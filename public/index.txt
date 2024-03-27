@@ -1,0 +1,11 @@
+Directory Contents: 
+/Users/marianbastiurea/Documents/GitHub/java-fun/public
+/Users/marianbastiurea/Documents/GitHub/java-fun/public/indexCopy.txt
+/Users/marianbastiurea/Documents/GitHub/java-fun/public/index.txt
+/Users/marianbastiurea/Documents/GitHub/java-fun/public/assets
+/Users/marianbastiurea/Documents/GitHub/java-fun/public/assets/indexCopy.txt
+/Users/marianbastiurea/Documents/GitHub/java-fun/public/assets/index.txt
+/Users/marianbastiurea/Documents/GitHub/java-fun/public/assets/icons
+/Users/marianbastiurea/Documents/GitHub/java-fun/public/assets/icons/indexCopy.txt
+/Users/marianbastiurea/Documents/GitHub/java-fun/public/assets/icons/index.txt
+Generated: 2024-03-26T14:34:12.310837
