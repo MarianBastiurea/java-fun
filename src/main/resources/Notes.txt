@@ -919,6 +919,9 @@ This feature is called Reentrant Synchronization.
 Without this, threads could block indefinitely.
 This concept is built into the Java language, and it's based on the monitor mechanism.
 
+Producer Consumer Application
+This kind of application has a class that produces data, so the Producer.
+It also has a class that reads the data, or consumes it in some way, this is the Consumer.
 
 
 
