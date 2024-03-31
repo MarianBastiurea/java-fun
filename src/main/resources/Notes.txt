@@ -890,6 +890,40 @@ Disadvantages of Implementing a Runnable and creating a Thread instance with it:
 You do have less control over the thread's behavior and properties.
 In other words, You can't access the thread's methods and fields directly, from the run method.
 
+
+Synchronized Methods
+Different invocations of synchronized methods, on the same object, are guaranteed not to interleave.
+When one thread is executing a synchronized method for an object, all other threads that invoke synchronized
+methods for the same object, block, and suspend their execution, until the first thread is done with the object.
+When a synchronized method exits, it ensures that the state of the object is visible to all threads.
+
+Critical Section
+The critical section is the code that's referencing a shared resource like a variable.
+Only one thread at a time should be able to execute a critical section.
+When all critical sections are synchronized, the class is thread safe.
+
+The Object instance monitor
+Every object instance in Java has a built-in intrinsic lock, also known as a monitor lock.
+A thread acquires a lock by executing a synchronized method on the instance, or by using the instance as the parameter
+ to a synchronized statement.
+A thread releases a lock when it exits from a synchronized block or method, even if it throws an exception.
+Only one thread at a time can acquire this lock, which prevents all other threads from accessing the instance's state,
+until the lock is released.
+All other threads, which want access to the instance's state  through synchronized code, will block, and wait, until
+they can acquire a lock.
+
+Reentrant Synchronization
+I said that once a thread acquires a lock, all other threads will block, which also require that lock.
+Because these method calls are executed from the same thread, any nested calls which try to acquire the lock,
+won't block, because the current thread already has it.
+This feature is called Reentrant Synchronization.
+Without this, threads could block indefinitely.
+This concept is built into the Java language, and it's based on the monitor mechanism.
+
+Producer Consumer Application
+This kind of application has a class that produces data, so the Producer.
+It also has a class that reads the data, or consumes it in some way, this is the Consumer.
+=======
 Threads accessing memory:
 Each thread has its own stack for local variables and method calls.
 One thread doesn't have access to another thread's stack.
@@ -953,8 +987,6 @@ When a variable is used to communicate between threads.
 When NOT to use volatile
 When a variable is only used by a single thread.
 When a variable is used to store a large amount of data.
-
-
 
 
 
