@@ -993,6 +993,72 @@ When a variable is used to store a large amount of data.
 
 
 
+The Object instance monitor
+Every object instance in Java has a built-in intrinsic lock, also known as a monitor lock.
+A thread acquires a lock by executing a synchronized method on the instance, or by using the instance as the parameter
+to a synchronized statement.
+A thread releases a lock when it exits from a synchronized block or method, even if it throws an exception.
+Only one thread at a time can acquire this lock, which prevents all other threads from accessing the instance's state,
+until the lock is released.
+All other threads, which want access to the instance's state  through synchronized code, will block, and wait, until
+they can acquire a lock.
+
+The synchronized statement can be applied to a more granular code block
+The synchronized statement is usually a better option in most circumstances, since it limits the scope of
+ synchronization, to the critical section of code.
+In other words, it gives you much more granular control, over when you want other threads to block.
+The synchronized block can use a different object, on which to acquire its lock.
+This means that code, accessing this bank account instance, wouldn't have to block entirely.
+
+Reentrant Synchronization
+I said that once a thread acquires a lock, all other threads will block, which also require that lock.
+Because these method calls are executed from the same thread, any nested calls which try to acquire the lock,
+won't block, because the current thread already has it.
+This feature is called Reentrant Synchronization.
+Without this, threads could block indefinitely.
+This concept is built into the Java language, and it's based on the monitor mechanism.
+
+Producer Consumer Application
+This kind of application has a class that produces data, so the Producer.
+It also has a class that reads the data, or consumes it in some way, this is the Consumer.
+The threads are stuck, one spinning indefinitely, the other blocked from doing anything.
+This is a classic deadlock situation.
+
+The Object class's wait, notify and notifyAll methods
+The wait, notify, and notifyAll methods, are used to manage some monitor lock situations, to prevent threads from
+blocking indefinitely.
+Because these methods are on Object, any instance of any class, can execute these methods, from within a synchronized
+method or statement.
+
+The Purpose of a Lock
+The purpose of a lock is to control access to a shared resource by multiple threads.
+
+Limitations of the Monitor Lock
+The monitor lock is pretty easy to use, but it does have limitations.
+There's no way to test if the intrinsic lock has already been acquired.
+There's no way to interrupt a blocked thread.
+There's not an easy way to debug, or examine the intrinsic lock.
+The intrinsic lock is an exclusive lock.
+
+Lock Hold Count
+The hold count of a lock counts the number of times that a single thread, the owner of the lock, has acquired the lock.
+When a thread acquires a lock for the first time, the lock's hold count is set to one.
+If a lock is re-entrant, and a thread, reacquires the same lock, the lock's hold count will get incremented.
+When a thread releases a lock, the lock's hold count is decremented.
+A lock is only released when it's hold count becomes zero.
+Because of this, it's really important to include a call to the unlock method in a finally clause, of any code
+that will acquire a lock, even if it's re-entrant.
+
+Review of the Advantages of using Lock implementations
+Explicit Control over when to acquire and release locks, making it easier to avoid deadlocks, and manage other
+concurrency challenges.
+Timeouts allow you to attempt to acquire a lock without blocking indefinitely.
+Along with timeouts, Interruptible Locking lets you handle interruptions during acquisition more gracefully.
+Improved Debugging methods let you query the number of waiting threads, and check if a thread holds a lock.
+
+
+
+
 
 
 */
