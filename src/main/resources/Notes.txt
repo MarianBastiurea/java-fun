@@ -1098,7 +1098,19 @@ Submitted Tasks are placed in a First-In First-Out queue.  Threads pop tasks fro
 so they're executed in the order they're submitted.
 The Thread Pool Manager allocates tasks to threads, and ensures proper thread synchronization.
 
+Difference between Runnable and Callable
 
+Significantly, Callable returns a value.
+This means you can get data back from your running threads.
+
+The Future Interface
+
+A Future represents a result, of an asynchronous computation.
+It's a generic type, a placeholder for a result instance.
+It has methods that cancel the task, retrieve the result, or check if the computation was completed or cancelled.
+The get method returns the result, but you can only call this get method, when the computation is complete,
+otherwise the call will block, until it does complete.
+The overloaded version of the get method allows you to specify a wait time, rather than blocking.
 
 
 
