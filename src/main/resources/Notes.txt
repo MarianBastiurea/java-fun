@@ -1128,6 +1128,13 @@ breaks down a complex task into smaller subtasks,
 processes them independently and in parallel,
 and then combines the results to solve the original problem.
 
+Parallel Streams
+Parallel streams allow you to perform operations on collections in parallel, thus potentially speeding up data processing.
+The key advantages of parallel streams are:
+Improved performance on multi-core CPUs.
+Simplified code for concurrent processing.
+Automatic workload distribution among available threads.
+
 
 
 
