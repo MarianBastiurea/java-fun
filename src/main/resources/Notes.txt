@@ -1079,6 +1079,64 @@ Built-in synchronization, reducing concurrency-related errors.
 Graceful Shutdown, preventing resource leaks.
 Scheduled implementations exist to further help with management workflows.
 
+Advantages of using an ExecutorService
+The job of managing threads is simplified.
+ExecutorService implementations let you stay focused on tasks that need to be run, rather than thread creation
+and management.
+
+Creating Threads is Expensive
+Creating threads, destroying threads, and then creating them again can be expensive.
+A thread pool mitigates the cost, by keeping a set of threads around, in a pool, for current and future work.
+Threads, once they complete one task, can then be reassigned to another task, without the expense of destroying
+that thread and creating a new one.
+
+The Mechanics of a Thread Pool
+A thread pool consists of three components.
+Worker Threads are available in a pool to execute tasks. They're pre-created and kept alive, throughout the
+ lifetime of the application.
+Submitted Tasks are placed in a First-In First-Out queue.  Threads pop tasks from the queue, and execute them,
+so they're executed in the order they're submitted.
+The Thread Pool Manager allocates tasks to threads, and ensures proper thread synchronization.
+
+Difference between Runnable and Callable
+
+Significantly, Callable returns a value.
+This means you can get data back from your running threads.
+
+The Future Interface
+
+A Future represents a result, of an asynchronous computation.
+It's a generic type, a placeholder for a result instance.
+It has methods that cancel the task, retrieve the result, or check if the computation was completed or cancelled.
+The get method returns the result, but you can only call this get method, when the computation is complete,
+otherwise the call will block, until it does complete.
+The overloaded version of the get method allows you to specify a wait time, rather than blocking.
+
+
+Work Stealing Thread Pool
+The work stealing thread pool is used for parallelism, and concurrent execution of tasks.
+Each worker thread has its own task queue.
+When a worker thread finishes its own tasks, and its queue is empty, it can "steal" tasks from the back of other
+worker threads' queues.
+This helps to balance the workload among threads, reduces idle time, and optimizes resource usage.
+
+The ForkJoinPool
+The ForkJoinPool class is Java's implementation of the Work Stealing Pool.
+It's based on the fork-join, or divide and conquer algorithm of computing.
+This algorithm
+breaks down a complex task into smaller subtasks,
+processes them independently and in parallel,
+and then combines the results to solve the original problem.
+
+Parallel Streams
+Parallel streams allow you to perform operations on collections in parallel, thus potentially speeding up data processing.
+The key advantages of parallel streams are:
+Improved performance on multi-core CPUs.
+Simplified code for concurrent processing.
+Automatic workload distribution among available threads.
+
+
+
 
 
 
