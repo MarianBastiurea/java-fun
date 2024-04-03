@@ -27,7 +27,7 @@ record Person(String firstName, String lastName, int age) {
 }
 
 
-public class MapParallelString {
+public class MapParallelStream {
     public static void main(String[] args) {
 
         var persons = Stream.generate(Person::new)
