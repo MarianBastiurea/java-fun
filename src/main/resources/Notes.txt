@@ -1135,6 +1135,38 @@ Improved performance on multi-core CPUs.
 Simplified code for concurrent processing.
 Automatic workload distribution among available threads.
 
+Why the HashMap isn't thread-safe?
+Lacks synchronization.
+There are no guarantees of memory consistency, while iterating.
+
+Concurrent Classes vs. Synchronized Wrapper Classes
+Both concurrent and synchronized collections are thread-safe, and can be used in parallel streams,
+or in a multi-threaded application.
+Synchronized collections are implemented using locks which protect the collection from concurrent access.
+ This means a single lock is used to synchronize access to the entire map.
+Concurrent collections are more efficient than synchronized collections, because they use techniques like
+fine-grained locking, or non-blocking algorithms to enable safe concurrent access without the need for heavy handed locking, meaning synchronized or single access locks.
+Concurrent collections are recommended over synchronized collections in most scenarios.
+
+Concurrent Collections
+LinkedList and ArrayList, as well as TreeSet and HashSet, are also NOT thread-safe.
+Each of these can be used with a synchronized wrapper, which you can get from the Collections helper class.
+The synchronized wrappers provide a thread-safe option for you, with less impact on the design, if you need
+to make existing code work concurrently.
+If you're starting with new code though, I'd recommend using  concurrent collections.
+
+Concurrent Collections for Arrays and Lists
+For lists, there are two concurrent collection choices, depending on the type of work which needs to be done in parallel.
+Use ConcurrentLinkedQueue when you'll have frequent insertions and removals, such as producer-consumer scenarios, or
+task scheduling.
+Use CopyOnWriteArrayList when you have a read-heavy workload with infrequent modifications. This type of list is useful
+ for scenarios like configuration management, or read-only views of data.
+For an array, you can use one of the concurrent list options above
+Or Use an ArrayBlockingQueue. This is a fixed-size queue, that blocks under two circumstances. The first is if you try
+ to poll or remove an element from an empty queue. The second is if you try to offer, or add an element to a full queue.
+  This is designed as a First In First Out or FIFO queue.
+
+
 
 
 
