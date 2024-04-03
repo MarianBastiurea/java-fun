@@ -1186,10 +1186,22 @@ Organize your locks into a hierarchy, and ensure that all threads acquire locks 
 waiting, which is a common cause of deadlocks. This approach helps establish a global lock order that all threads must
 follow.
 Instead of using traditional synchronized blocks or methods, you can use the tryLock method on the Lock interface.
- This method allows you to attempt to acquire a lock.  If it fails, you can handle the situation without causing
- a deadlock.
+This method allows you to attempt to acquire a lock.  If it fails, you can handle the situation without causing
+a deadlock.
 
--
+
+Livelock
+A livelock is when two or more threads are continuously reacting, each responding to the other's actions.
+And they can never successfully complete.
+You can find different examples of this problem on the internet.
+
+Livelocks can be difficult to debug and fix
+Livelocks can be difficult to debug and fix.
+For this reason, there are a few general things you can do to avoid them:
+Avoid having threads that are constantly checking each other's states.
+Use timeouts to prevent threads from waiting indefinitely for each other.
+Use randomization to break the symmetry between threads.
+
 
 
 
