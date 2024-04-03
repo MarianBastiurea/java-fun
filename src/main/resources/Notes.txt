@@ -1180,6 +1180,15 @@ Deadlock-Two or more threads are blocked, waiting for each other to release a re
 Livelock-Two or more threads are continuously looping, each waiting for the other thread to take some action.
 Starvation-A thread is not able to obtain the resources it needs to execute.
 
+Preventing Deadlocks
+A couple of common ways to avoid this kind of deadlock situation, are listed here.
+Organize your locks into a hierarchy, and ensure that all threads acquire locks in the same order to avoid circular
+waiting, which is a common cause of deadlocks. This approach helps establish a global lock order that all threads must
+follow.
+Instead of using traditional synchronized blocks or methods, you can use the tryLock method on the Lock interface.
+ This method allows you to attempt to acquire a lock.  If it fails, you can handle the situation without causing
+ a deadlock.
+
 -
 
 
