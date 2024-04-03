@@ -1163,9 +1163,24 @@ Use CopyOnWriteArrayList when you have a read-heavy workload with infrequent mod
  for scenarios like configuration management, or read-only views of data.
 For an array, you can use one of the concurrent list options above
 Or Use an ArrayBlockingQueue. This is a fixed-size queue, that blocks under two circumstances. The first is if you try
- to poll or remove an element from an empty queue. The second is if you try to offer, or add an element to a full queue.
-  This is designed as a First In First Out or FIFO queue.
+to poll or remove an element from an empty queue. The second is if you try to offer, or add an element to a full queue.
+This is designed as a First In First Out or FIFO queue.
 
+CopyOnWriteArrayList
+The name "CopyOnWrite" is important.
+Whenever this list is modified, by adding, updating, or removing elements, a new copy of the underlying array is created.
+The modification is performed on the new copy, allowing concurrent read operations to use the original unmodified array.
+This ensures that reader threads aren't blocked by writers.
+Since changes are made to a separate copy of the array, there aren't any synchronization issues between the reading
+and writing threads.
+This is ordinarily too costly, but may be more efficient than alternatives when traversal operations, vastly outnumber
+ mutations.
+
+Deadlock-Two or more threads are blocked, waiting for each other to release a resource.
+Livelock-Two or more threads are continuously looping, each waiting for the other thread to take some action.
+Starvation-A thread is not able to obtain the resources it needs to execute.
+
+-
 
 
 
