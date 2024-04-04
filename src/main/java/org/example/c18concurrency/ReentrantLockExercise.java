@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 //Write a Java program that uses the ReentrantLock class to synchronize access to a shared
 // resource among multiple threads.
 
-public class Exercise4 {
+public class ReentrantLockExercise {
 
     private static final int numThreads = 6;
     private static final int numIterations = 3;

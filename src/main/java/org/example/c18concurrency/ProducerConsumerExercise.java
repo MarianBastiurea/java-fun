@@ -4,7 +4,6 @@ package org.example.c18concurrency;
 // notify() methods for thread synchronization. Finish process after 10 product.
 
 import java.util.LinkedList;
-import java.util.Queue;
 
 class ProducerConsumer {
     LinkedList<Integer> buffer = new LinkedList<>();
@@ -60,7 +59,7 @@ class ProducerConsumer {
 }
 
 
-public class Exercise2 {
+public class ProducerConsumerExercise {
     public static void main(String[] args) {
         ProducerConsumer pc = new ProducerConsumer();
 

@@ -6,7 +6,7 @@ package org.example.c18concurrency;
 
 import java.util.concurrent.*;
 
-public class Exercise5 {
+public class CallableExercise {
     public static void main(String[] args) {
 
         ExecutorService executor = Executors.newSingleThreadExecutor();
