@@ -5,7 +5,7 @@ package org.example.c18concurrency;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
-public class Exercise7 {
+public class ForkJoinPoolExercise {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9,10};
         ForkJoinPool forkJoinPool = new ForkJoinPool();
