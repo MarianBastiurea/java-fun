@@ -1,7 +1,5 @@
 package org.example.c18concurrency;
 
-import java.util.Date;
-
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -9,9 +7,8 @@ import java.util.concurrent.TimeUnit;
 //Write a Java program that uses the ScheduledExecutorService interface to schedule tasks for execution at a
 // specified time or with a fixed delay.
 
-import java.util.concurrent.Executors;
 
-public class Exercise6 {
+public class ScheduledExecutorServiceExercise {
     private static final String[] lines = {
             "Humpty Dumpty sat on a wall,",
             "Humpty Dumpty had a great fall,",

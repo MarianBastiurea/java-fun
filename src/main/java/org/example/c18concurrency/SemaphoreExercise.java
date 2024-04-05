@@ -4,7 +4,7 @@ import java.util.concurrent.Semaphore;
 
 //Write a Java program to demonstrate Semaphore usage for thread synchronization.
 
-public class Exercise3 {
+public class SemaphoreExercise {
     private static final int numThreads = 5;
     private static final int numPermits = 3;
 
