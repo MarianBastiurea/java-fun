@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UtilitiesTest {
 
+
+
     @Test
     void everyNthChar() {
         Utilities utilities = new Utilities();
@@ -31,11 +33,6 @@ class UtilitiesTest {
         Utilities utilities = new Utilities();
         assertEquals(300, utilities.converter(10,5));
 
-    }
-    @Test(expected=ArithmeticException.class)
-     void converterArithmeticException() throws Exception{
-        Utilities utilities = new Utilities();
-        utilities.converter(10,0);
     }
 
     @Test

@@ -8,9 +8,6 @@ import java.util.Collection;
 
 import static junit.framework.TestCase.assertEquals;
 
-/**
- * Created by timbuchalka on 20/11/16.
- */
 @RunWith(Parameterized.class)
 public class BankAccountTestParameterized {
 
