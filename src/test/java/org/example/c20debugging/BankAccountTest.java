@@ -5,7 +5,7 @@ public class BankAccountTest {
     private BankAccount account;
     private static int count;
 
-    @org.junit.BeforeClass
+
     public static void beforeClass() {
         System.out.println("This executes before any test cases. Count = " + count++);
     }
