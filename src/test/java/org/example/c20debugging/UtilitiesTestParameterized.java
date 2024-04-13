@@ -1,15 +1,18 @@
 package org.example.c20debugging;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.params.provider.CsvSource;
+
 import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.Arrays;
 import java.util.Collection;
 
-@RunWith(Parameterized.class)
+//@RunWith(Parameterized.class)
 public class UtilitiesTestParameterized {
 
-    private Utilities util;
+    private static Utilities util;
 
     private String input;
     private String output;
@@ -19,22 +22,23 @@ public class UtilitiesTestParameterized {
         this.output = output;
     }
 
-    @org.junit.Before
-    public void setup() {
+    @BeforeAll
+    public static void setup() {
         util = new Utilities();
     }
 
-    @Parameterized.Parameters
-    public static Collection<Object[]> testConditions() {
-        return Arrays.asList(new Object[][] {
-                {"ABCDEFF", "ABCDEF"},
-                {"AB88EFFG", "AB8EFG"},
-                {"112233445566", "123456"},
-                {"A", "A"}
-        });
+    @ParameterizedTest
+    @CsvSource({"ABCDEFF", "ABCDEF",
+            "AB88EFFG", "AB8EFG",
+            "112233445566", "123456",
+            "A", "A"
+    })
+    public static void testConditions(String input, String output) {
+        Utilities utilities = new Utilities();
+        assertEquals(output, utilities.removePairs(input));
     }
 
-    @org.junit.Test
+    // @org.junit.Test
     public void removePairs() throws Exception {
         assertEquals(output, util.removePairs(input));
     }
