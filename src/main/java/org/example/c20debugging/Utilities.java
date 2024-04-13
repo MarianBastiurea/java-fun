@@ -16,7 +16,7 @@ public class Utilities {
     }
 
     //remove pairs of char that are consecutive
-    public String removePairs(String source) {
+    public static String removePairs(String source) {
         if (source==null||source.length() < 2) {
             return source;
         }
