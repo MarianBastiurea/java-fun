@@ -1,49 +1,37 @@
 package org.example.c20debugging;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Arrays;
-import java.util.Collection;
-
-import static junit.framework.TestCase.assertEquals;
-
-@RunWith(Parameterized.class)
 public class BankAccountTestParameterized {
 
-    private BankAccount account;
-    private double amount;
-    private boolean branch;
-    private double expected;
-
-    public BankAccountTestParameterized(double amount, boolean branch, double expected) {
-        this.amount = amount;
-        this.branch = branch;
-        this.expected = expected;
+    @ParameterizedTest
+    @CsvSource({
+            "100.00, true, 1100.00",
+            "200.00, true, 1200.00",
+            "325.14, true, 1325.14",
+            "489.33, true, 1489.33",
+            "1000.00, true, 2000.00"
+    })
+    public void testDeposit(double depositAmount, boolean branch, double expectedBalance) {
+        BankAccount bankAccount = new BankAccount("John", "Doe", 1000, BankAccount.CHECKING);
+        bankAccount.deposit(depositAmount, branch);
+        assertEquals(expectedBalance, bankAccount.getBalance(), 0.01);
     }
 
-    @org.junit.Before
-    public void setup() {
-        account = new BankAccount("Tim", "Buchalka", 1000.00, BankAccount.CHECKING);
-        System.out.println("Running a test...");
+    @ParameterizedTest
+    @CsvSource({
+            "100.00, true, 900.00",
+            "200.00, true, 800.00",
+            "325.14, true, 674.86",
+            "489.33, true, 510.67",
+            "1000.00, true, 0.00"
+    })
+    public void testWithdraw(double withdrawAmount, boolean branch, double expectedBalance) {
+        BankAccount bankAccount = new BankAccount("John", "Doe", 1000, BankAccount.CHECKING);
+        bankAccount.withdraw(withdrawAmount, branch);
+        assertEquals(expectedBalance, bankAccount.getBalance(), 0.01);
     }
-
-    @Parameterized.Parameters
-    public static Collection<Object[]> testConditions() {
-        return Arrays.asList(new Object[][] {
-                {100.00, true, 1100.00},
-                {200.00, true, 1200.00},
-                {325.14, true, 1325.14},
-                {489.33, true, 1489.33},
-                {1000.00, true, 2000.00}
-        });
-
-    }
-
-    @org.junit.Test
-    public void deposit() throws Exception {
-        account.deposit(amount, branch);
-        assertEquals(expected, account.getBalance(), .01);
-    }
-
 }
