@@ -1,8 +1,5 @@
 package org.example.c22databases;
 
-public class ConnectingWithDatabase {
-
-
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 
@@ -11,7 +8,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Arrays;
 
-    public class Main {
+public class ConnectingWithDatabase {
 
         private final static String CONN_STRING = "jdbc:mysql://localhost:3306/music";
 
