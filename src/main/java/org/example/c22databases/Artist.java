@@ -1,5 +1,7 @@
 package org.example.c22databases;
 
+import jakarta.persistence.Entity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
