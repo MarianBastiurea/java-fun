@@ -9,7 +9,7 @@ public class MainMusic {
 
         try (var sessionFactory =
                      Persistence.createEntityManagerFactory(
-                             "dev.lpa.music");
+                             "c22databases");
              EntityManager entityManager = sessionFactory.createEntityManager();
         ) {
 
