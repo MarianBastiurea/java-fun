@@ -6,13 +6,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
 import java.util.List;
 
-public class PreparedStatement {
+public class Main {
     private static String ARTIST_INSERT =
             "INSERT INTO music.artists (artist_name) VALUES (?)";
     private static String ALBUM_INSERT =
@@ -51,7 +52,7 @@ public class PreparedStatement {
         }
     }
 
-    private static boolean printRecords(ResultSet resultSet) throws SQLException {
+    public static boolean printRecords(ResultSet resultSet) throws SQLException {
 
         boolean foundData = false;
         var meta = resultSet.getMetaData();
@@ -132,7 +133,7 @@ public class PreparedStatement {
                 Statement.RETURN_GENERATED_KEYS);
              java.sql.PreparedStatement psAlbum = conn.prepareStatement(ALBUM_INSERT,
                      Statement.RETURN_GENERATED_KEYS);
-             java.sql.PreparedStatement psSong = conn.prepareStatement(SONG_INSERT,
+             PreparedStatement psSong = conn.prepareStatement(SONG_INSERT,
                      Statement.RETURN_GENERATED_KEYS);
         ) {
             conn.setAutoCommit(false);

@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class MusicCallableStatement {
+public class MusicCallableStatement2 {
     private static final int ARTIST_COLUMN = 0;
     private static final int ALBUM_COLUMN = 1;
     private static final int SONG_COLUMN = 3;
@@ -50,8 +50,9 @@ public class MusicCallableStatement {
                 System.getenv("MYSQL_USER"),
                 System.getenv("MYSQL_PASS"));
         ) {
+/*
             CallableStatement cs = connection.prepareCall(
-                    "CALL music.addAlbum(?,?,?)");
+                    "CALL music.addAlbumInOutCounts(?,?,?,?)");
 
             albums.forEach((artist, albumMap) -> {
                 albumMap.forEach((album, songs) -> {
@@ -59,19 +60,40 @@ public class MusicCallableStatement {
                         cs.setString(1, artist);
                         cs.setString(2, album);
                         cs.setString(3, songs);
+                        cs.setInt(4, 10);
+                        cs.registerOutParameter(4, Types.INTEGER);
                         cs.execute();
+                        System.out.printf("%d songs were added for %s%n",
+                                cs.getInt(4), album);
 
                     } catch (SQLException e) {
                         System.err.println(e.getErrorCode() + " " + e.getMessage());
                     }
                 });
-            });
+            }); */
 
             String sql = "SELECT * FROM music.albumview WHERE artist_name = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, "Bob Dylan");
             ResultSet resultSet = ps.executeQuery();
             Main.printRecords(resultSet);
+
+            CallableStatement csf = connection.prepareCall(
+                    "{ ? = CALL music.calcAlbumLength(?) }");
+            csf.registerOutParameter(1, Types.DOUBLE);
+
+            albums.forEach((artist, albumMap) -> {
+                albumMap.keySet().forEach((albumName) -> {
+                    try {
+                        csf.setString(2, albumName);
+                        csf.execute();
+                        double result = csf.getDouble(1);
+                        System.out.printf("Length of %s is %.1f%n", albumName, result);
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+            });
         } catch (SQLException e) {
             e.printStackTrace();
         }
