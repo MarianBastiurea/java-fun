@@ -18,7 +18,7 @@ public class QueryUsingCriteriaBuilder {
 
         List<Artist> artists = null;
         try (EntityManagerFactory emf = Persistence.createEntityManagerFactory(
-                "dev.lpa.music");
+                "c22databases");
              EntityManager em = emf.createEntityManager();) {
 
             var transaction = em.getTransaction();
