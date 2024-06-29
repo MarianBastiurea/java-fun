@@ -11,7 +11,7 @@ public class SimpleClient {
 
     public static void main(String[] args) {
 
-        try (Socket socket = new Socket("localhost", 5000)) {
+        try (Socket socket = new Socket("localhost", 6000)) {
 
             BufferedReader input = new BufferedReader(
                     new InputStreamReader(socket.getInputStream()));
