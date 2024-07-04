@@ -1,4 +1,4 @@
-package org.example.c23network;
+package org.example.c23network.server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
