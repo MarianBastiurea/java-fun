@@ -1,5 +1,5 @@
 # Java Fun
-![Coverage](.github/badges/jacoco.svg)
+
 
 
  Java Fun is my route to becoming a Java programmer and this course is a comprehensive guide to one of the most popular and powerful programming languages.
