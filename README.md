@@ -14,10 +14,9 @@ Java is an object-oriented programming language known for its portability, scala
 - Object-oriented principles and design patterns
 - Exception handling and debugging techniques
 - Utilizing Java libraries and frameworks
-- Building graphical user interfaces (GUIs)
 - Database connectivity and file management
 
-Java fun is my route to become a Java programmer, and this course has equipped me with the skills to develop efficient and scalable Java applications.
+Java Fun is my route to become a Java programmer, and this course has equipped me with the skills to develop efficient and scalable Java applications.
 
 
 
